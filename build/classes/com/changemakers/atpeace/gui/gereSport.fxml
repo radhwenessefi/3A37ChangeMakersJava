@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.GereSportController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="fifRech" layoutY="63.0" prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="searchField" layoutX="46.0" layoutY="13.0" onAction="#ResearchRegime" prefHeight="36.0" prefWidth="312.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
+                     <font>
+                        <Font name="Georgia" size="10.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="551.0" layoutY="14.0" onMouseClicked="#ajouterSportIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/ajouter.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="498.0" layoutY="358.0" prefHeight="18.0" prefWidth="88.0" text="Deconnexion" />
+            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="461.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/power.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableview" layoutY="127.0" prefHeight="219.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="titre" prefWidth="109.33334350585938" style="-fx-background-color: white;" text="Titre" />
+                <TableColumn fx:id="desc" prefWidth="111.33331298828125" style="-fx-background-color: white;" text="Description" />
+                  <TableColumn fx:id="niveaux" prefWidth="142.0" style="-fx-background-color: white;" text="Niveaux" />
+                  <TableColumn fx:id="image" prefWidth="116.00006103515625" style="-fx-background-color: white;" text="Image" />
+                  <TableColumn fx:id="level" prefWidth="121.33331298828125" style="-fx-background-color: white;" text="level" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="107.0" layoutY="351.0" onMouseClicked="#updateSport" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/loop.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="53.0" layoutY="351.0" onMouseClicked="#deleteOneSport" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/bin.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="63.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: white;" text="Gestion Sport " textFill="#458a9d">
+                     <font>
+                        <Font name="Baskerville Old Face" size="39.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="1.0" layoutY="60.0" prefHeight="5.0" prefWidth="600.0" style="-fx-background-color: black;" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="changemakers.gui.UpdateCommandeFXMLController">
+     <left>
+      <VBox prefHeight="541.0" prefWidth="284.0" style="-fx-background-color: #3a6fbd;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="ao_btn_dashboard" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="308.0" style="-fx-background-color: white;" stylesheets="@Dashboard.css" textAlignment="CENTER" textFill="#e1e1de">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <AnchorPane prefHeight="49.0" prefWidth="39.0">
+                     <children>
+                        <ImageView fitHeight="175.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagUsers" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" text="Gestion Utilisateurs" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@users-alt.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users1" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagProd" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" text="Gestion Boutique" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cart-shopping-fast%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users11" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagMusic" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" text="Gestion Moyens de relaxation" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@tv-music.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users12" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagSport" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" text="Gestion Régime et Sport" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@gym.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users13" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagReclamation" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" text="Gestion Réclamations" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@id-badge.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <AnchorPane prefHeight="57.0" prefWidth="281.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="44.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@blog-text.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="ao_btn_manage_users131" graphicTextGap="10.0" layoutX="77.0" layoutY="-4.0" mnemonicParsing="false" onAction="#GoToManagBlog" prefHeight="65.0" prefWidth="193.0" style="-fx-background-color: #3a6fbd;" text="Gestion Blog" textAlignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+              
+                     </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="55.0" prefWidth="284.0">
+               <children>
+                  <Button alignment="CENTER_RIGHT" layoutX="80.0" layoutY="7.0" mnemonicParsing="false" text="Se déconnecter">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@power.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="700.0" prefWidth="563.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="192.0" prefHeight="367.0" prefWidth="499.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="28.0" prefHeight="17.0" prefWidth="168.0" text="Fraid de commande:" />
+                  <Label layoutX="14.0" layoutY="66.0" prefHeight="17.0" prefWidth="130.0" text="date livraison:" />
+                  <Label layoutX="16.0" layoutY="104.0" prefHeight="17.0" prefWidth="78.0" text="etat:" />
+                  <Label layoutX="12.0" layoutY="134.0" prefHeight="17.0" prefWidth="130.0" text="quantite livré:" />
+                  <TextField fx:id="tprix" layoutX="165.0" layoutY="24.0" />
+                  <TextField fx:id="tetat" layoutX="165.0" layoutY="100.0" />
+                  <TextField fx:id="tquantiteliv" layoutX="165.0" layoutY="130.0" />
+                  <DatePicker fx:id="tdate" layoutX="163.0" layoutY="62.0" />
+                  <Button layoutX="181.0" layoutY="258.0" mnemonicParsing="false" onAction="#UpdateCom" text="Update commande" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </center>
+</BorderPane>

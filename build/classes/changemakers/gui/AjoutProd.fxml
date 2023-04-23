@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="changemakers.gui.AjoutpProdController">
+     <left>
+      <VBox prefHeight="541.0" prefWidth="284.0" style="-fx-background-color: #3a6fbd;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="ao_btn_dashboard" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToDashboard" prefHeight="74.0" prefWidth="308.0" style="-fx-background-color: white;" textAlignment="CENTER" textFill="#e1e1de">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <AnchorPane prefHeight="49.0" prefWidth="39.0">
+                     <children>
+                        <ImageView fitHeight="175.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagUsers" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Utilisateurs" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@users-alt.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users1" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagProd" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Boutique" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cart-shopping-fast%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users11" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagMusic" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Moyens de relaxation" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@tv-music.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users12" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Régime et Sport" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@gym.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="ao_btn_manage_users13" graphicTextGap="10.0" mnemonicParsing="false" onAction="#GoToManagReclamation" prefHeight="65.0" prefWidth="309.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Réclamations" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@id-badge.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <AnchorPane prefHeight="57.0" prefWidth="281.0">
+               <children>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="44.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@blog-text.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="ao_btn_manage_users131" graphicTextGap="10.0" layoutX="77.0" layoutY="-4.0" mnemonicParsing="false" onAction="#GoToManagBlog" prefHeight="65.0" prefWidth="193.0" style="-fx-background-color: #3a6fbd;" stylesheets="@Dashboard.css" text="Gestion Blog" textAlignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+              
+                     </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="55.0" prefWidth="284.0">
+               <children>
+                  <Button alignment="CENTER_RIGHT" layoutX="80.0" layoutY="7.0" mnemonicParsing="false" text="Se déconnecter">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@power.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+    </left>
+   <right>
+      <AnchorPane onMouseClicked="#ImportProduitImage" prefHeight="459.0" prefWidth="353.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane onMouseClicked="#ImportProduitImage" prefHeight="459.0" prefWidth="353.0">
+               <children>
+                  <TableView fx:id="PMtable" layoutX="14.0" layoutY="112.0" onMouseClicked="#SelectProduit" prefHeight="321.0" prefWidth="712.0" stylesheets="@../../../../../../../Downloads/PidevS1JAVA-main/PidevS1JAVA-main/src/GUI/commande.css">
+                     <columns>
+                        <TableColumn fx:id="nomProdtab" minWidth="20.0" prefWidth="105.0" text="nom" />
+                        <TableColumn fx:id="Prixtab" prefWidth="105.0" text="prix" />
+                        <TableColumn fx:id="Pquantitetab" prefWidth="105.0" text="quantite" />
+                        <TableColumn fx:id="PMtypetab" prefWidth="105.0" text="catégorie" />
+                        <TableColumn fx:id="imagetab" prefWidth="105.0" text="image" />
+                        <TableColumn fx:id="descriptionprix" prefWidth="105.0" text="description" />
+                        <TableColumn fx:id="Actiontab" prefWidth="75.0" text="Action" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="PMcherchertab" layoutX="476.0" layoutY="79.0" promptText="chercher produit" styleClass="search" stylesheets="@../../../../../../../Downloads/PidevS1JAVA-main/PidevS1JAVA-main/src/GUI/main.css" />
+                  <Label layoutX="190.0" layoutY="77.0" prefHeight="23.0" prefWidth="233.0" text="Recherche :">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="23.0" text="Liste Des Produits" textFill="#0a0a0a">
+                     <font>
+                        <Font name="System Bold Italic" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="459.0" prefWidth="435.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="33.0" layoutY="321.0" text="description" />
+            <TextField fx:id="descrip" layoutX="106.0" layoutY="317.0" />
+            <Label layoutX="50.0" layoutY="181.0" text="nom" />
+            <TextField fx:id="tnom" layoutX="106.0" layoutY="177.0" />
+            <Label layoutX="49.0" layoutY="217.0" text="prix" />
+            <TextField fx:id="priix" layoutX="106.0" layoutY="213.0" />
+            <Label layoutX="33.0" layoutY="284.0" prefHeight="17.0" prefWidth="59.0" text="categorie" />
+            <Label layoutX="40.0" layoutY="251.0" text="quantite" />
+            <TextField fx:id="qt" layoutX="106.0" layoutY="247.0" />
+            <AnchorPane fx:id="main_form" layoutX="69.0" layoutY="14.0" prefHeight="118.0" prefWidth="134.0">
+               <children>
+                  <ImageView fx:id="imageViewProduit" fitHeight="115.0" fitWidth="163.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                  <AnchorPane fx:id="main_form1" prefHeight="118.0" prefWidth="134.0">
+                     <children>
+                        <ImageView fx:id="imageViewProduit1" fitHeight="115.0" fitWidth="163.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="18.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#ImportProduitImage" text="Importer une image" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <ComboBox id="combobox_categ" fx:id="tfcategories" layoutX="106.0" layoutY="280.0" onAction="#ChoisirCateg" prefWidth="150.0" promptText="choisir..." />
+            <TextField fx:id="tfimage" layoutX="86.0" layoutY="130.0" />
+            <Button fx:id="Pajoutertab" layoutX="15.0" layoutY="367.0" mnemonicParsing="false" onAction="#AjoutP" prefHeight="27.0" prefWidth="91.0" styleClass="aj-btn" stylesheets="@../../../../../../../Downloads/PidevS1JAVA-main/PidevS1JAVA-main/src/GUI/commande.css" text="Ajouter" textFill="#a9b230">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="suppPM" layoutX="75.0" layoutY="411.0" mnemonicParsing="false" onAction="#SupprimerProd" prefHeight="27.0" prefWidth="90.0" styleClass="aj-btn" stylesheets="@../../../../../../../Downloads/PidevS1JAVA-main/PidevS1JAVA-main/src/GUI/commande.css" text="Supprimer" textFill="RED">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Pmodifier" layoutX="135.0" layoutY="367.0" mnemonicParsing="false" onAction="#ModifP" prefHeight="27.0" prefWidth="92.0" styleClass="aj-btn" stylesheets="@../../../../../../../Downloads/PidevS1JAVA-main/PidevS1JAVA-main/src/GUI/commande.css" text="Modifier" textFill="#a9b230">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+
+</BorderPane>

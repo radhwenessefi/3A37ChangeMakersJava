@@ -26,7 +26,7 @@ public class NewFXMain extends Application {
      
     
     try {
-        Parent root = FXMLLoader.load(getClass().getResource("/changemakers/gui/Panier.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/changemakers/gui/baseFront.fxml"));
         Scene scene = new Scene(root, 350, 350);
         primaryStage.setTitle("Ajout");
         primaryStage.setScene(scene);

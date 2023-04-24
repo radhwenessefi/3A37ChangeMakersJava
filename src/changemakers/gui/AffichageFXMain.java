@@ -24,8 +24,8 @@ public class AffichageFXMain extends Application {
     @Override
     public void start(Stage primaryStage) {     
         try {
-            //Parent root = FXMLLoader.load(getClass().getResource("AffichageProduitFXML.fxml"));
-            Parent root = FXMLLoader.load(getClass().getResource("baseFront.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("AffichageProduitFXML.fxml"));
+            //Parent root = FXMLLoader.load(getClass().getResource("baseFront.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);

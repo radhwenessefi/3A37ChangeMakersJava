@@ -49,7 +49,7 @@ public class Commande {
         return etat;
     }
 
-    public void ajouterProduit(Produit produit, int quantite) {
+    public void ajouterProduit(Produit produit, int quantite) {/*
         boolean produitExistant = false;
         for (ProduitCommande produitCommande : produits_commandes) {
             if (produitCommande.getProduit().equals(produit)) {
@@ -67,7 +67,7 @@ public class Commande {
     }
 
     public List<ProduitCommande> getProduits_commandes() {
-        return produits_commandes;
+        return produits_commandes;*/
     }
 
     public void setEtat(String etat) {

@@ -5,12 +5,12 @@
         <group>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/utils/SMS.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/PanierController.java</file>
-            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/CommandeFXMain.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/entities/Commande.java</file>
-            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/AffichageProduitFXMLController.java</file>
-            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/baseFront.fxml</file>
+            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/services/ProduitCommadeCRUD.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/ProduitFrontController.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/entities/Produit.java</file>
+            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/UpdateCommandeFXMLController.java</file>
+            <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/NewFXMain.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/services/ProduitCRUD.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/AjoutpProdController.java</file>
             <file>file:/C:/Users/zaiir/OneDrive/Documents/NetBeansProjects/ChangeMakers/src/changemakers/gui/AffichageFXMain.java</file>

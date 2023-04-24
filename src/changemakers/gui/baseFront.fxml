@@ -13,10 +13,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="changemakers.gui.BaseFrontProduitController">
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="changemakers.gui.BaseProduitFrontController">
    <children>
       <Pane layoutX="14.0" prefHeight="71.0" prefWidth="938.0">
          <children>
+            <ImageView fitHeight="71.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/logo.png" />
+               </image>
+            </ImageView>
             <TextField fx:id="search" layoutX="221.0" layoutY="18.0" prefHeight="36.0" prefWidth="400.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
                <font>
                   <Font name="Georgia" size="10.0" />
@@ -27,16 +32,21 @@
                   <Image url="@../../image/loupe.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="889.0" layoutY="18.0" onMouseClicked="#GoToPanier" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="705.0" layoutY="26.0">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="47.0" fitWidth="53.0" layoutX="843.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../image/shopping-cart.png" />
+                  <Image url="@../../image/utilisateur.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
       <Pane layoutY="85.0" prefHeight="545.0" prefWidth="185.0">
          <children>
-            <Label layoutX="60.0" layoutY="40.0" text="Dashbord">
+            <Label layoutX="60.0" layoutY="40.0" text="Acceuil">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -46,7 +56,7 @@
                   <Image url="@../../image/une-analyse.png" />
                </image>
             </ImageView>
-            <Label layoutX="60.0" layoutY="98.0" text="sport &amp; regime">
+            <Label layoutX="60.0" layoutY="98.0" text="Sport &amp; Regime">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -64,17 +74,17 @@
          <children>
             <Pane layoutX="-1.0" layoutY="-13.0" prefHeight="169.0" prefWidth="761.0">
                <children>
-                  <Label layoutX="374.0" layoutY="14.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                  <Label layoutX="374.0" layoutY="14.0" text="." textFill="#fffefe">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="498.0" layoutY="113.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                  <Label layoutX="498.0" layoutY="113.0" text="." textFill="#fffefe">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="410.0" layoutY="69.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                  <Label layoutX="410.0" layoutY="69.0" text="." textFill="#fffefe">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -83,28 +93,24 @@
             </Pane>
             <VBox layoutX="-6.0" layoutY="157.0" prefHeight="369.0" prefWidth="740.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="740.0" text="Produit ">
+                  <Label alignment="CENTER" prefHeight="41.0" prefWidth="740.0" text="Découvrir nos produits">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <ScrollPane fx:id="scrollPane1" prefHeight="300.0" prefWidth="200.0">
                      <content>
-                        <GridPane fx:id="productGrid" prefHeight="26.0" prefWidth="0.0">
-                           <rowConstraints>
-                              <RowConstraints maxHeight="461.599951171875" minHeight="10.0" prefHeight="184.00000915527343" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
+                        <VBox fx:id="cardLayout" prefHeight="283.0" prefWidth="818.0" />
                      </content>
                   </ScrollPane>
                </children>
             </VBox>
          </children>
       </Pane>
-      <ImageView fitHeight="71.0" fitWidth="195.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../image/logo.png" />
-         </image>
-      </ImageView>
+      <GridPane fx:id="productGrid" prefHeight="26.0" prefWidth="0.0">
+         <rowConstraints>
+            <RowConstraints maxHeight="461.599951171875" minHeight="10.0" prefHeight="184.00000915527343" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
    </children>
 </AnchorPane>

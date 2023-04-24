@@ -21,12 +21,12 @@ import javafx.stage.Stage;
  * @author zaiir
  */
 public class ProdFXMain extends Application {
-    
-     @Override
-    public void start(Stage primaryStage) {     
+
+    @Override
+    public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("baseFront.fxml"));
-            
+
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);
@@ -36,12 +36,11 @@ public class ProdFXMain extends Application {
         }
     }
 
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

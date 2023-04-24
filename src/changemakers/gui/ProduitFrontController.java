@@ -5,7 +5,7 @@
 package changemakers.gui;
 
 import changemakers.entities.Produit;
-import changemakers.entities.ProduitCommande;
+//import changemakers.entities.ProduitCommande;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -43,7 +43,7 @@ public class ProduitFrontController implements Initializable {
     @FXML
     private Button addToCartButton;
 
-    private ArrayList<ProduitCommande> ListProd;
+    //private ArrayList<ProduitCommande> ListProd;
     @FXML
     private TextField qte;
 
@@ -70,8 +70,19 @@ public class ProduitFrontController implements Initializable {
 
     @FXML
     private void AjouterAuPanier(ActionEvent event) throws IOException {
+         // Get the selected product
+        Produit selectedProduct = produit;
+        // Load the "panier.fxml" controller
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("panier.fxml"));
+        Parent root = loader.load();
+         PanierController panierController = loader.getController();
+        // Add the selected product to the table view in the "panier.fxml" controller
+         panierController.addProductToTable(selectedProduct);
+        // Close the current window
+        //Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //stage.close();
 
-        Produit p= produit;
+       /* Produit p= produit;
         int quantite = Integer.parseInt(qte.getText());
         for (ProduitCommande prod:ListProd){
             if (prod.getProduit().equals(p)){
@@ -82,22 +93,12 @@ public class ProduitFrontController implements Initializable {
             }
         }
         for (ProduitCommande pc:ListProd) {
-            System.out.println(pc.toString());
+            System.out.println(pc.toString());*/
         }
         
         
-        // Get the selected product
-        //Produit selectedProduct = produit;
-        // Load the "panier.fxml" controller
-        // FXMLLoader loader = new FXMLLoader(getClass().getResource("panier.fxml"));
-        //Parent root = loader.load();
-        // PanierController panierController = loader.getController();
-        // Add the selected product to the table view in the "panier.fxml" controller
-        // panierController.addProductToTable(selectedProduct);
-        // Close the current window
-        //Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //stage.close();
-    }
+       
+    
 
     @FXML
     private void incrementQuantity(ActionEvent event) {

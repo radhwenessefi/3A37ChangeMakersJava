@@ -9,6 +9,7 @@ package changemakers.entities;
  * @author zaiir
  */
 public class ProduitCommande {
+    /*
 
     public Produit produit;
     public int quantite;
@@ -30,4 +31,8 @@ public class ProduitCommande {
         this.quantite = quantite;
     }
 
+    public void setCommande(Commande commande) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+*/
 }

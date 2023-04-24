@@ -113,7 +113,7 @@ public class AffichageProduitFXMLController implements Initializable {
         Prixtab.setCellValueFactory(new PropertyValueFactory<Produit, Float>("prix_produit"));
         Pquantitetab.setCellValueFactory(new PropertyValueFactory<Produit, Integer>("quantite_produit"));
         
-               imagetab.setCellValueFactory(new PropertyValueFactory<Produit, String>("image_produit"));
+        imagetab.setCellValueFactory(new PropertyValueFactory<Produit, String>("image_produit"));
         descriptionprix.setCellValueFactory(new PropertyValueFactory<Produit, String>("description"));
         
         PMtable.setItems(ProduitList);

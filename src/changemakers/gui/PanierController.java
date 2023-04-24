@@ -5,7 +5,7 @@
 package changemakers.gui;
 
 import changemakers.entities.Produit;
-import changemakers.entities.ProduitCommande;
+//import changemakers.entities.ProduitCommande;
 import changemakers.services.ProduitCRUD;
 import com.twilio.Twilio;
 import com.twilio.type.PhoneNumber;
@@ -33,7 +33,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class PanierController implements Initializable {
 
     private ObservableList<Produit> ProduitList;
-    private ObservableList<ProduitCommande> PCList;
+   // private ObservableList<ProduitCommande> PCList;
 
     private ProduitCRUD pc;
 
@@ -44,41 +44,43 @@ public class PanierController implements Initializable {
     public static final String ACCOUNT_SID = "AC6c197603e9b32566e57ee11b80fb452e";
     public static final String AUTH_TOKEN = "58bc3c2664282324bbde9c1e520ebc3b";
     @FXML
-    private TableView<ProduitCommande> tabpanier;
+    private TableView<Produit> tabpanier;
     @FXML
-    private TableColumn<ProduitCommande, String> nom;
+    private TableColumn<Produit, String> nom;
     @FXML
-    private TableColumn<ProduitCommande, Float> prix;
+    private TableColumn<Produit, Float> prix;
     @FXML
     private Label prix_total;
     private double total = 0;
     @FXML
-    private TableColumn<?, ?> qte;
+    private TableColumn<Produit, Integer> qte;
 
-    public void addProductToTable(ProduitCommande produit) {
+   /* public void addProductToTable(ProduitCommande produit) {
+        // Add the product to the table view
+        tabpanier.getItems().add(produit);
+
+        // Update the total price
+    }*/
+  public void addProductToTable(Produit produit) {
         // Add the product to the table view
         tabpanier.getItems().add(produit);
 
         // Update the total price
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        /*
         ProduitCRUD pc = new ProduitCRUD();
         for (ProduitCommande pcom : PCList) {
             total += pcom.getProduit().getPrix_produit();
             prix_total.setText(String.format("%.2f", total));
         }
-        /*try {
-          ObservableList<Produit> ProduitList = FXCollections.observableArrayList(pc.selectAll());
-        } catch (SQLException ex) {
-            Logger.getLogger(AffichageProduitFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+       
         nom.setCellValueFactory(new PropertyValueFactory<>("nom_produit"));
         prix.setCellValueFactory(new PropertyValueFactory<>("prix_produit"));
          qte.setCellValueFactory(new PropertyValueFactory<>("quantite"));
         
-        tabpanier.setItems(PCList);
+        tabpanier.setItems(PCList);*/
 
     }
 
@@ -96,6 +98,7 @@ public class PanierController implements Initializable {
                 .create();
 
         System.out.println(message.getSid());
+        
     }
 
 }

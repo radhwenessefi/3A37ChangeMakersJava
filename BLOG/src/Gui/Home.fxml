@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeController">
+    <children>
+        <Button fx:id="addPostesButton" layoutX="246.0" layoutY="225.0" onAction="#handleAddPostesButtonAction" text="show onePoste" />
+        <Button fx:id="postesListButton" layoutX="234.0" layoutY="144.0" onAction="#handlePostesListButtonAction" text="Gestion des Postes" />
+        
+        
+        <!--<Button fx:id="commentairesListButton" layoutX="221.0" layoutY="123.0" onAction="#handleCommentairesListButtonAction" text="Gestion des Commentairss" /> -->
+        <!-- -->
+    </children>
+</AnchorPane>

@@ -16,18 +16,26 @@ import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -55,6 +63,12 @@ public class BaseFrontController implements Initializable {
     private Button btncalculer;
     @FXML
     private TextField tfResult;
+    int taille;
+    int poids;
+    int BMI;
+    private Pagination pagination;
+    private List<Regime> filteredRefimes; // the data to display
+    private Pane changepane;
 
 
     @Override
@@ -122,9 +136,12 @@ try {
     
     
     private void updateGrid(List<Regime> filteredRefimes) throws SQLException, IOException {
-
+ this.filteredRefimes = filteredRefimes;
+    int itemsPerPage = 9; // Number of items to display on each page
         productGrid.getChildren().clear();
         Label noResultsLabel = new Label();
+         pagination = new Pagination((filteredRefimes.size() / itemsPerPage + 1), 0);
+   
         VBox vbox= new VBox();
         if (filteredRefimes.isEmpty()) {
             productGrid.setVisible(false);
@@ -136,6 +153,7 @@ try {
             noResultsLabel.setText("Aucun résultat");
             vbox.getChildren().add(noResultsLabel);
             productGrid.add(vbox, 1, 1);
+            productGrid.add(pagination, 0, 0);
 
         }else {
             int col = 0;
@@ -190,9 +208,90 @@ try {
     }
 }
 
+   
 
+@FXML
+private void CalculeBMI(ActionEvent event) throws SQLException, IOException {
+    controleRegime controle = new controleRegime();
+    String tailleStr = tfTaille.getText();
+    double taille = Double.parseDouble(tailleStr);
+    String poidsStr = tfPoids.getText();
+    double poids = Double.parseDouble(poidsStr);
+    double bmi = poids / (taille * taille);
 
+        List<Regime> listergs=null;
+        if (bmi < 18.5) {
+          
+             
+              listergs =  controle.AffichebyLevel("underweghit");
+               System.out.print(listergs);
+               updateGrid(listergs);
+            String bmiStr = String.format("%.2f", bmi);
+            tfResult.setText(bmiStr);
+            
+            
+            
+        } else if (bmi >= 18.5 && bmi < 25) {
+              
+         
+            listergs =  controle.AffichebyLevel("ideal");
+               System.out.print(listergs);
+               updateGrid(listergs);
+            String bmiStr = String.format("%.2f", bmi);
+            tfResult.setText(bmiStr);
+                       
 
+            System.out.print(regimes);
+        } else if (bmi >= 25 && bmi < 30) {
+                      
+
+           
+                     
+            listergs =  controle.AffichebyLevel("overweghit");
+               System.out.print(listergs);
+               updateGrid(listergs);
+            String bmiStr = String.format("%.2f", bmi);
+            tfResult.setText(bmiStr);
+            
+            
+        } else {
+            String bmiStr = String.format("%.2f", bmi);
+            tfResult.setText(bmiStr);
+             listergs=null;
+             updateGrid(listergs);
+             System.out.print(regimes);
+        }
+    }
+
+    private void goToSport(MouseEvent event) throws IOException {
+             
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/changemakers/atpeace/gui/sportFront.fxml"));
+Pane content = loader.load();
+
+Pane pane = new Pane(content); // create a new Pane and add the content to it
+
+// Set the constraints of the content node within the Pane
+content.setLayoutX(0);
+content.setLayoutY(0);
+content.setPrefWidth(Double.MAX_VALUE);
+content.setPrefHeight(Double.MAX_VALUE);
+
+// Replace the existing content in your main Pane with the new content
+changepane.getChildren().setAll(pane);
+
+        
+    }
+
+    private void goToRegimeFront(MouseEvent event) throws IOException {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/changemakers/atpeace/gui/baseFront.fxml"));
+
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    
 
 
 }

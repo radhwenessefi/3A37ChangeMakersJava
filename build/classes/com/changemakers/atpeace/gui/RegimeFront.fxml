@@ -17,7 +17,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="142.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="142.0" layoutY="8.0" onMouseClicked="#addFavoris" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/add-to-favorites.png" />
                </image>

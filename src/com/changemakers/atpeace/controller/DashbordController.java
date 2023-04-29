@@ -65,7 +65,25 @@ public class DashbordController implements Initializable {
 
         // Replace the existing content in your main pane with the new content
         paneDash.getChildren().setAll(anchorPane);
+        
 
+    }
+
+    @FXML
+    private void DashboordView(MouseEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/changemakers/atpeace/gui/charts.fxml"));
+        AnchorPane content = loader.load();
+
+        AnchorPane anchorPane = new AnchorPane(content); // create a new AnchorPane and add the BorderPane to it
+
+        // Set the anchor constraints of the BorderPane to fill the AnchorPane
+        AnchorPane.setTopAnchor(content, 0.0);
+        AnchorPane.setRightAnchor(content, 0.0);
+        AnchorPane.setBottomAnchor(content, 0.0);
+        AnchorPane.setLeftAnchor(content, 0.0);
+           // Replace the existing content in your main pane with the new content
+        paneDash.getChildren().setAll(anchorPane);
     }
 
 }

@@ -23,5 +23,8 @@ public interface IService<T> {
     
     List<T> selectAll() throws SQLException;
     List<T> selectByLevel(String leve) throws SQLException;
+        List<T> selectByIdRegime(int idregime) throws SQLException;
+
+    
     
 }

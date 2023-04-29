@@ -138,6 +138,11 @@ public List<Sport> selectByLevel(String level) throws SQLException {
     
     return temp;
 }
+
+    @Override
+    public List<Sport> selectByIdRegime(int idregime) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
   
     
 }

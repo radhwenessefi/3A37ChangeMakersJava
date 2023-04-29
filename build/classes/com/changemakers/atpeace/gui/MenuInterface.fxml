@@ -11,57 +11,57 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.MenuInterfaceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.MenuInterfaceController">
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="fifRech" layoutY="63.0" prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="fifRech" layoutY="63.0" prefHeight="63.0" prefWidth="700.0" style="-fx-background-color: white;">
                <children>
-                  <TextField fx:id="search" layoutX="46.0" layoutY="13.0" prefHeight="36.0" prefWidth="312.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
+                  <TextField fx:id="search" layoutX="25.0" layoutY="13.0" prefHeight="36.0" prefWidth="549.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
                      <font>
                         <Font name="Georgia" size="10.0" />
                      </font>
                   </TextField>
-                  <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="551.0" layoutY="14.0" onMouseClicked="#ajouterRegimeIcon" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="651.0" layoutY="13.0" onMouseClicked="#ajouterRegimeIcon" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Images/ajouter.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label layoutX="498.0" layoutY="358.0" prefHeight="18.0" prefWidth="88.0" text="Deconnexion" />
-            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="461.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="598.0" layoutY="468.0" prefHeight="18.0" prefWidth="88.0" text="Deconnexion" />
+            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="560.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/power.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tableview" layoutY="127.0" prefHeight="219.0" prefWidth="600.0">
+            <TableView fx:id="tableview" layoutY="127.0" prefHeight="328.0" prefWidth="700.0">
               <columns>
-                <TableColumn fx:id="titre" prefWidth="109.33334350585938" style="-fx-background-color: WHITE;" text="Titre" />
-                <TableColumn fx:id="desc" prefWidth="111.33331298828125" style="-fx-background-color: WHITE;" text="Description" />
-                  <TableColumn fx:id="liste" prefWidth="142.0" style="-fx-background-color: WHITE;" text="liste element" />
-                  <TableColumn fx:id="level" prefWidth="121.33331298828125" style="-fx-background-color: WHITE;" text="Level" />
-                  <TableColumn fx:id="image" prefWidth="116.00006103515625" style="-fx-background-color: WHITE;" text="Image" />
+                <TableColumn fx:id="titre" prefWidth="159.99999487400055" style="-fx-background-color: WHITE;" text="Titre" />
+                <TableColumn fx:id="desc" prefWidth="150.00001525878906" style="-fx-background-color: WHITE;" text="Description" />
+                  <TableColumn fx:id="liste" prefWidth="149.33331298828125" style="-fx-background-color: WHITE;" text="liste element" />
+                  <TableColumn fx:id="level" prefWidth="116.66671752929688" style="-fx-background-color: WHITE;" text="Level" />
+                  <TableColumn fx:id="image" prefWidth="123.3333740234375" style="-fx-background-color: WHITE;" text="Image" />
               </columns>
             </TableView>
-            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="107.0" layoutY="351.0" onMouseClicked="#updateRegime" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="116.0" layoutY="460.0" onMouseClicked="#updateRegime" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/loop.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="53.0" layoutY="351.0" onMouseClicked="#deleteOneRegime" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="46.0" layoutX="46.0" layoutY="460.0" onMouseClicked="#deleteOneRegime" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/bin.png" />
                </image>
             </ImageView>
             <Pane prefHeight="63.0" prefWidth="600.0">
                <children>
-                  <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: white;" text="Gestion Regime" textFill="#458a9d">
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: white;" text="Gestion Regime" textFill="#458a9d">
                      <font>
                         <Font name="Baskerville Old Face" size="39.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="1.0" layoutY="60.0" prefHeight="5.0" prefWidth="600.0" style="-fx-background-color: black;" />
+                  <Pane layoutX="1.0" layoutY="63.0" prefHeight="2.0" prefWidth="700.0" style="-fx-background-color: black;" />
                </children>
             </Pane>
          </children>

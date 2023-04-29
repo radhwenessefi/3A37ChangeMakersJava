@@ -123,8 +123,8 @@ public class controleSport {
 	}
        public List AffichebyLevel(String level) throws SQLException {
              ServiceSport sp = new ServiceSport();
-       List<Sport>regimes = sp.selectByLevel(level);
-        return regimes;
+       List<Sport>sports = sp.selectByLevel(level);
+        return sports;
 	}
     public void SupprimerSport(Sport r) throws SQLException {
           ServiceSport sp = new ServiceSport();

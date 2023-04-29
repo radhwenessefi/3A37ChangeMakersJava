@@ -125,20 +125,25 @@ public List<Regime> selectByLevel(String level) throws SQLException {
     ResultSet rs = ps.executeQuery();
     
     while (rs.next()) {
-        Regime p = new Regime();
         
+        Regime p = new Regime();
         p.setId(rs.getInt(1));
         p.setTitle(rs.getString(2));
         p.setListe_alement(rs.getString(4));
         p.setDiscription(rs.getString(3));
         p.setImage(rs.getString(5));
-        p.setLevel(rs.getString(6));
-                    
+        p.setLevel(rs.getString(6));        
         temp.add(p);
+        
     }
     
     return temp;
 }
+
+    @Override
+    public List<Regime> selectByIdRegime(int idregime) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     
     

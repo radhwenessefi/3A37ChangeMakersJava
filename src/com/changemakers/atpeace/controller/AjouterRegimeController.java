@@ -99,7 +99,7 @@ public class AjouterRegimeController implements Initializable {
          Path to1 = null;
         
         String m = null;
-        String path = "C:\\Users\\DELL\\Downloads\\WorkshopJDBC3A37\\WorkshopJDBC3A37\\src\\assets";
+        String path = "C:\\Users\\DELL\\Desktop\\WorkshopJDBC3A37\\WorkshopJDBC3A37\\src\\assets";
         JFileChooser chooser = new JFileChooser();
 
         FileNameExtensionFilter filter = new FileNameExtensionFilter(

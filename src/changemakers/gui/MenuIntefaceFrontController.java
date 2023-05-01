@@ -6,6 +6,10 @@ package changemakers.gui;
 
 import changemakers.entities.Reclamation;
 import changemakers.services.ReclamationCrud;
+import static changemakers.utils.SMS.ACCOUNT_SID;
+import static changemakers.utils.SMS.AUTH_TOKEN;
+import com.twilio.Twilio;
+import com.twilio.type.PhoneNumber;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Instant;
@@ -117,7 +121,20 @@ public class MenuIntefaceFrontController implements Initializable {
             tftitre.clear();
             tadescription.clear();
             cdate.setValue(null);
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+
+        com.twilio.rest.api.v2010.account.Message message;
+        message = com.twilio.rest.api.v2010.account.Message
+                .creator(
+                        new PhoneNumber("+21658310144"),
+                        new PhoneNumber("+16813233319"),
+                        "Votre reclamation à été recu, on vous repondra dans les plus brefs délais"
+                )
+                .create();
+
+        System.out.println(message.getSid());
         }
+        
 
     }
     private Parent root;
@@ -145,7 +162,7 @@ public class MenuIntefaceFrontController implements Initializable {
     public void switchToListReponse(ActionEvent event){
         //String username = nameTextField.getText();
 		
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("gereSport.fxml"));	
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("listReponseFront.fxml"));	
         try {	
             root = loader.load();
         } catch (IOException ex) {

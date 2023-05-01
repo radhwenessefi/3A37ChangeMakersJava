@@ -406,7 +406,7 @@ public class MenuInterfaceController implements Initializable {
     @FXML
     public void switchToReponse(ActionEvent event) {
         r.setEtat_reclamation("Traité");
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuInterface_1.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("listReponseBack.fxml"));
     try {
         root = loader.load();
     } catch (IOException ex) {

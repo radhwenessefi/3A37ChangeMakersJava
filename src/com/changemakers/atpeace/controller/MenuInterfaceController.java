@@ -1,195 +1,286 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package com.changemakers.atpeace.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import com.changemakers.atpeace.entites.Regime;
-import java.io.IOException;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.application.Application;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import static jdk.javadoc.internal.doclets.toolkit.util.DocPath.parent;
 
 /**
  * FXML Controller class
  *
- * @author DELL
+ * @author gille
  */
 public class MenuInterfaceController implements Initializable {
 
     @FXML
-    private TableView<Regime> tableview;
+    private Label tbusername;
+    private Label lbprenom;
+    private Label lbemail;
+    private Label lbadresse;
+    private Label lbtelephone;
     @FXML
-    private TableColumn<Regime, String> titre;
+    private Label lbnom;
     @FXML
-    private TableColumn<Regime, String> desc;
+    private ImageView imup;
     @FXML
-    private TableColumn<Regime, String> liste;
+    private Label lbEt;
     @FXML
-    private TableColumn<Regime, String> image;
+    private Label lbetat;
     @FXML
-    private TableColumn<Regime, String> level;
-    ObservableList<Regime> regimes = FXCollections.observableArrayList();
-    ObservableList<Regime> allusers;
-    ObservableList<Regime> selectedregime;
+    private Label lbDi;
     @FXML
-    private AnchorPane fifRech;
+    private Label lbdiplome;
+    
+    private int id;
+    @FXML
+    private Label lbrdv;
+    @FXML
+    private AnchorPane mainAncho;
+    
+    private Parent loader;
    
-    private boolean isListenerAdded = false;
-    @FXML
-    private TextField search;
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        controleRegime controle = new controleRegime();
+        // TODO
+        lbetat.visibleProperty().setValue(false);
+        lbdiplome.visibleProperty().setValue(false);
+        lbEt.visibleProperty().setValue(false);
+        lbDi.visibleProperty().setValue(false);
+    }
 
-        List<Regime> listemps = null;
-        try {
-            listemps = controle.AfficheToutRegime();
-        } catch (SQLException ex) {
-            Logger.getLogger(MenuInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (!listemps.isEmpty()) {
-            for (int i = 0; i < listemps.size(); i++) {
-                regimes.add(listemps.get(i));
-            }
-        }
-        titre.setCellValueFactory(new PropertyValueFactory<Regime, String>("title"));
-        desc.setCellValueFactory(new PropertyValueFactory<Regime, String>("discription"));
-        liste.setCellValueFactory(new PropertyValueFactory<Regime, String>("liste_alement"));
-        image.setCellValueFactory(new PropertyValueFactory<Regime, String>("image"));
-        level.setCellValueFactory(new PropertyValueFactory<Regime, String>("level"));
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        //tableview.setItems(regimes);
-         // Wrap the ObservableList in a FilteredList (initially display all data).
-        FilteredList<Regime> filteredData = new FilteredList<>(regimes, b -> true);
-		
-		// 2. Set the filter Predicate whenever the filter changes.
-		search.textProperty().addListener((observable, oldValue, newValue) -> {
-			filteredData.setPredicate(re -> {
-				// If filter text is empty, display all persons.
-								
-				if (newValue == null || newValue.isEmpty()) {
-					return true;
-				}
-				
-				// Compare first name and last name of every person with filter text.
-				String lowerCaseFilter = newValue.toLowerCase();
-				
-				if (re.getTitle().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-					return true; // Filter matches first name.
-				} else if (re.getDiscription().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					return true; // Filter matches last name.
-				}
-				else if (re.getListe_alement().indexOf(lowerCaseFilter)!=-1){
-				     return true;
-                                } else if (re.getLevel().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					return true; // Filter matches last name.
-				}
-				     else  
-				    	 return false; // Does not match.
-			});
-		});
-		
-		// 3. Wrap the FilteredList in a SortedList. 
-		SortedList<Regime> sortedData = new SortedList<>(filteredData);
-		
-		// 4. Bind the SortedList comparator to the TableView comparator.
-		// 	  Otherwise, sorting the TableView would have no effect.
-		sortedData.comparatorProperty().bind(tableview.comparatorProperty());
-		
-		// 5. Add sorted (and filtered) data to the table.
-		tableview.setItems(sortedData);
-               
-        
-        
+    public int getId() {
+        return id;
+    }
     
+
+    public Label getLbEt() {
+        return lbEt;
+    }
+
+    public Label getLbetat() {
+        return lbetat;
+    }
+
+    public Label getLbDi() {
+        return lbDi;
+    }
+
+    public Label getLbdiplome() {
+        return lbdiplome;
+    }
+    
+
+    public void setLbnom(String nom) {
+        this.lbnom.setText(nom);
+    }
+
+    public void setLbprenom(String prenom) {
+        this.lbprenom.setText(prenom);
+    }
+
+    public void setLbemail(String email) {
+        this.lbemail.setText(email);
+    }
+
+    public void setLbtelephone(String tel) {
+        this.lbtelephone.setText(tel);
+    }
+
+    public void setLbusename(String username) {
+        this.tbusername.setText(username);
+    }
+    
+    public void setLbadresse(String adresse) {
+        this.lbadresse.setText(adresse);
+    }
+
+   
+    public void setLbetat(String etat) {
+        this.lbetat.setText(etat);
+    }
+
+
+    public void setLbdiplome(String diplome) {
+        this.lbdiplome.setText(diplome);
     }
 
     @FXML
-    private void ajouterRegimeIcon(MouseEvent event) {
+    private void update(MouseEvent event) {
         
-
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("updateInteface.fxml"));
+    
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/ajouterRegime.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.initStyle(StageStyle.UTILITY);
-            stage.show();
+            Parent root = loader.load();
+            UpdateInterfaceController up = loader.getController();
+            up.setId(id);
+            up.setTbusername(tbusername.getText());
+            up.setTfadresse(lbadresse.getText());
+            up.setTfemail(lbemail.getText());
+            up.setTfnom(lbnom.getText());
+            up.setTfprenom(lbprenom.getText());
+            up.setTftelphone(lbtelephone.getText());
+            
+            imup.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(MenuInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }
 
-    @FXML
-    private void updateRegime(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/changemakers/atpeace/gui/modifer_regime.fxml"));
+   /* @FXML
+    private void deconnexion(MouseEvent event) {
+        
+    }*/
+
+    private void rdvIn(MouseEvent event) {
+          try {
+                  /* */
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("RendezVousInterace.fxml"));
         Parent root = loader.load();
+        RendezVousInteraceController rd = loader.getController();
+        rd.setId(id);
         Scene scene = new Scene(root);
-        Modifer_regimeController modifier = loader.getController();
-        modifier.initdata((Regime) tableview.getSelectionModel().getSelectedItems().get(0));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+                } catch (IOException ex) {
+                    Logger.getLogger(SignInController.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }
 
     @FXML
-    private void deleteOneRegime(MouseEvent event) throws SQLException {
-        
-        controleRegime controle = new controleRegime();
-        selectedregime = tableview.getSelectionModel().getSelectedItems();
-        if (selectedregime.size() > 0) {
-            for (Regime u : selectedregime) {
-                controle.SupprimerRegime(u);
-            }
-            regimes.clear();
-            List<Regime> listemps = controle.AfficheToutRegime();
-            for (int i = 0; i < listemps.size(); i++) {
-                regimes.add(listemps.get(i));
-            }
-            tableview.setItems(regimes);
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Gestion entropôt");
-            alert.setHeaderText("Suppression des l'employés");
-            alert.setContentText("Employer supprimé avec succès !");
-            alert.showAndWait();
-
-        }
+    private void deconnecter(MouseEvent event) {
+        try {
+                  /* */
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("SigninInterface.fxml"));
+        Parent root = loader.load();       
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+                } catch (IOException ex) {
+                    Logger.getLogger(SignInController.class.getName()).log(Level.SEVERE, null, ex);
+                }
     }
 
+    @FXML
+    private void gotomusique(MouseEvent event) {
+    }
 
+    @FXML
+    private void gotoboutique(MouseEvent event) {
+    }
 
+    @FXML
+    private void gotosport(MouseEvent event) {
+          try { loader = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/gereSport.fxml"));
+                mainAncho.getChildren().removeAll();
+
+// pane.getChildren().removeAll(lbcon,btconnecter);
+                //pane.getChildren().addAll(lbins,btinscrire);
+                mainAncho.getChildren().setAll(loader);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+
+    @FXML
+    private void gotoregime(MouseEvent event) {
+         try {
+                loader = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/MenuInterfaceR.fxml"));
+                mainAncho.getChildren().removeAll();
+
+// pane.getChildren().removeAll(lbcon,btconnecter);
+                //pane.getChildren().addAll(lbins,btinscrire);
+                mainAncho.getChildren().setAll(loader);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+
+    @FXML
+    private void gotovideo(MouseEvent event) {
+    }
+
+    @FXML
+    private void gotoreclamation(MouseEvent event) {
+    }
+
+    @FXML
+    private void gotordv(MouseEvent event) {
+        try {
+                loader = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/RdvBack.fxml"));
+                mainAncho.getChildren().removeAll();
+
+// pane.getChildren().removeAll(lbcon,btconnecter);
+                //pane.getChildren().addAll(lbins,btinscrire);
+                mainAncho.getChildren().setAll(loader);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+
+    @FXML
+    private void gotoblock(MouseEvent event) {
+    }
+
+    @FXML
+    private void gotodash(MouseEvent event) {
+    }
+
+    @FXML
+    private void gotopatient(MouseEvent event) {
+        try {
+                loader = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/PatientBack.fxml"));
+                mainAncho.getChildren().removeAll();
+
+// pane.getChildren().removeAll(lbcon,btconnecter);
+                //pane.getChildren().addAll(lbins,btinscrire);
+                mainAncho.getChildren().setAll(loader);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
+
+    @FXML
+    private void gotomedecin(MouseEvent event) {
+        try {
+                loader = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/MedecinBack.fxml"));
+                mainAncho.getChildren().removeAll();
+
+// pane.getChildren().removeAll(lbcon,btconnecter);
+                //pane.getChildren().addAll(lbins,btinscrire);
+                mainAncho.getChildren().setAll(loader);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+    }
 }

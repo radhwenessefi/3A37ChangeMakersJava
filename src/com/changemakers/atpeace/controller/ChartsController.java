@@ -4,7 +4,7 @@
  */
 package com.changemakers.atpeace.controller;
 
-import com.changemakers.atpeace.entites.Favoris;
+import com.changemakers.atpeace.entities.Favoris;
 import com.changemakers.atpeace.entites.Rate;
 import com.changemakers.atpeace.services.ServiceFavoris;
 import com.changemakers.atpeace.services.ServiceRate;
@@ -51,7 +51,7 @@ public class ChartsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Create an empty ObservableList of PieChart.Data objects
+         // Create an empty ObservableList of PieChart.Data objects
         ObservableList<PieChart.Data> pieChartDataRate = FXCollections.observableArrayList();
 
 // Get the list of Rate objects from your database
@@ -112,4 +112,5 @@ public class ChartsController implements Initializable {
         piechartFavoris.setData(pieChartDataFavoris);
 
     }
+
 }

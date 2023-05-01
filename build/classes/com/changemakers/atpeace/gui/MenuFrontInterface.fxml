@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.MenuFrontInterfaceController">
+   <children>
+      <Pane layoutX="14.0" prefHeight="71.0" prefWidth="938.0">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/logo.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="search" layoutX="221.0" layoutY="18.0" prefHeight="36.0" prefWidth="400.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
+               <font>
+                  <Font name="Georgia" size="10.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="21.0" fitWidth="36.0" layoutX="628.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/loupe.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbusername" layoutX="786.0" layoutY="25.0" text="Label">
+               <font>
+                  <Font name="Bodoni MT" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="47.0" fitWidth="53.0" layoutX="843.0" layoutY="13.0" onMouseClicked="#profil" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/utilisateur.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutY="85.0" prefHeight="545.0" prefWidth="185.0">
+         <children>
+            <Label layoutX="59.0" layoutY="27.0" text=" Regime">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="phregime" fitHeight="36.0" fitWidth="35.0" layoutX="14.0" layoutY="23.0" onMouseClicked="#regime" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/diete.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="60.0" layoutY="88.0" text=" Sport">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="phsport" fitHeight="36.0" fitWidth="35.0" layoutX="14.0" layoutY="84.0" onMouseClicked="#sport" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/haltere.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutY="75.0" prefHeight="9.0" prefWidth="962.0" style="-fx-background-color: #F1E5AC;" />
+      <Separator layoutX="182.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="630.0" prefWidth="21.0" />
+      <Pane layoutX="205.0" layoutY="97.0" prefHeight="525.0" prefWidth="758.0">
+         <children>
+            <Pane layoutX="-1.0" layoutY="-13.0" prefHeight="174.0" prefWidth="761.0">
+               <children>
+                  <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="-37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/bb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="172.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/bb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="380.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/bb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="169.0" fitWidth="238.0" layoutX="540.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/bb.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="374.0" layoutY="14.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="498.0" layoutY="113.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="410.0" layoutY="69.0" text="ahah hahh jajh ggdf hhete " textFill="#fffefe">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox layoutX="-6.0" layoutY="157.0" prefHeight="369.0" prefWidth="769.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -23,7 +23,7 @@ public class AjouterRegime extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/Dashbord.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/MenuInterface.fxml"));
                 //Parent root = FXMLLoader.load(getClass().getResource("/com/changemakers/atpeace/gui/ajouter_regime.fxml"));
 
         Scene scene = new Scene(root);

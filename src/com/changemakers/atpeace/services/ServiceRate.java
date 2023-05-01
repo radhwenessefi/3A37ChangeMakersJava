@@ -21,19 +21,19 @@ import java.util.List;
  */
 public class ServiceRate implements IService<Rate> {
 
-    private Connection cnx;
+    private Connection con;
 
  
 
     public ServiceRate() {
-                cnx = MyConnexion.getInstance().getCnx();
+                con = MyConnexion.getInstance().getCon();
 
     }
 
     public void insertOne1(Rate t) throws SQLException {
         String req = "INSERT INTO `rate`(`regime_id`, `rating`, `num_totale`, `nub_of_rate`,`regime_name`) VALUES (?,?,?,?,?)";
 
-        PreparedStatement ps = cnx.prepareStatement(req);
+        PreparedStatement ps = con.prepareStatement(req);
         ps.setInt(1, t.getRegime_id());
         ps.setInt(2, t.getRating());
         ps.setInt(3, t.getNum_totale());
@@ -53,7 +53,7 @@ public class ServiceRate implements IService<Rate> {
     @Override
     public void updateOne(Rate t) throws SQLException {
         String req = "UPDATE `rate` SET `regime_id`=?, `rating`=?, `num_totale`=?, `nub_of_rate`=?,`regime_name`=? WHERE `id`=?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setInt(1, t.getRegime_id());
     ps.setInt(2, t.getRating());
     ps.setInt(3, t.getNum_totale());
@@ -79,7 +79,7 @@ public class ServiceRate implements IService<Rate> {
         List<Rate> temp = new ArrayList<>();
 
         String req = "SELECT * FROM `rate`";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
 
         ResultSet rs = st.executeQuery(req);
 
@@ -108,7 +108,7 @@ public List<Rate> selectByIdRegime(int idregime) throws SQLException {
     List<Rate> temp = new ArrayList<>();
     
     String req = "SELECT * FROM `rate` WHERE `regime_id` = ?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setInt(1, idregime);
     
     ResultSet rs = ps.executeQuery();

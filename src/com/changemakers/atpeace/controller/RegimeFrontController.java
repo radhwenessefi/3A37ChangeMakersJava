@@ -4,11 +4,15 @@
  */
 package com.changemakers.atpeace.controller;
 
-import com.changemakers.atpeace.entites.Favoris;
+import com.changemakers.atpeace.entities.Favoris;
 import com.changemakers.atpeace.entites.Rate;
 import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Patient;
+import com.changemakers.atpeace.entities.Session;
 import com.changemakers.atpeace.services.ServiceFavoris;
+import com.changemakers.atpeace.services.ServicePatient;
 import com.changemakers.atpeace.services.ServiceRate;
+import com.changemakers.atpeace.services.SessionService;
 import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
@@ -51,10 +55,25 @@ public class RegimeFrontController implements Initializable {
     int rating;
     int num_totale;
     int nub_of_rate;
+    int id;
+Session s = new Session();
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+         SessionService ss = new SessionService();
+        s = ss.ConnectUser();
+        id = s.getId_user();
+        System.out.println(id);
     }
 
  public void setData(Regime regimes) throws SQLException {
@@ -124,13 +143,21 @@ public class RegimeFrontController implements Initializable {
        List<Favoris> favoris_test=sr.selectByIdRegime(regime_id);
         System.out.print("tesst"+favoris_test);
        
+       ServicePatient sp = new ServicePatient();
+                   System.out.println("Avant la recherche" + id);
+
+         Patient p = sp.VerifierI(id);
         if (!favoris_test.isEmpty()) { // check if the list is not empty
+            System.out.println(p);
     for (Favoris favoris_t : favoris_test) {
         int nb_total = favoris_t.getNb_total()+ 1; 
         int nb_favori = favoris_t.getNb_favori()+1;
         rating= (int) tfrate.getRating();
         int id=favoris_t.getId();
-                Favoris favoris_change = new Favoris(id,regime_id,nb_favori,nb_total,name_regime);
+         
+                   System.out.println(p.getId());
+
+                Favoris favoris_change = new Favoris(id,regime,p,nb_favori,nb_total);
                 sr.updateOne(favoris_change);
 
     } 
@@ -139,9 +166,9 @@ public class RegimeFrontController implements Initializable {
 }else {
              int nb_total = 1; 
         int nb_favori = 1;
-         
-           
-                Favoris favoris_new = new Favoris(regime_id,nb_favori,nb_total,name_regime);
+                     System.out.println(p);
+            System.out.println(p.getId());
+               Favoris favoris_new = new Favoris(regime,p,nb_favori,nb_total);
                 sr.insertOne(favoris_new);
            
         }

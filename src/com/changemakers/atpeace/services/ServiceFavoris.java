@@ -4,7 +4,8 @@
  */
 package com.changemakers.atpeace.services;
 
-import com.changemakers.atpeace.entites.Favoris;
+import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Favoris;
 import com.changemakers.atpeace.utils.MyConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,22 +21,22 @@ import java.util.List;
  */
 public class ServiceFavoris implements IService<Favoris> {
 
-    private Connection cnx;
+    private Connection con;
 
     public ServiceFavoris() {
-        cnx = MyConnexion.getInstance().getCnx();
+        con = MyConnexion.getInstance().getCon();
 
     }
 
     @Override
     public void updateOne(Favoris t) throws SQLException {
-        String req = "UPDATE `favoris` SET `regime_id`=?, `nb_favori`=?, `nb_total`=?,`regime_name`=? WHERE `id`=?";
-        PreparedStatement ps = cnx.prepareStatement(req);
-        ps.setInt(1, t.getRegime_id());
+        String req = "UPDATE `favoris` SET `regime_id`=?, `nb_favori`=?, `nb_total`=? WHERE `id`=?";
+        PreparedStatement ps = con.prepareStatement(req);
+        ps.setInt(1, t.getRegime_id().getId());
         ps.setInt(2, t.getNb_favori());
         ps.setInt(3, t.getNb_total());
-         ps.setString(4, t.getRegime_name());
-        ps.setInt(5, t.getId());
+        //  ps.setString(4, t.getRegime_name());
+        ps.setInt(4, t.getId());
         ps.executeUpdate();
         System.out.println("Rate updated successfully!");
 
@@ -49,7 +50,7 @@ public class ServiceFavoris implements IService<Favoris> {
     @Override
     public void deleteOne(int id) throws SQLException {
         String req = "DELETE FROM `favoris` WHERE `id`=?";
-        PreparedStatement ps = cnx.prepareStatement(req);
+        PreparedStatement ps = con.prepareStatement(req);
         ps.setInt(1, id);
         int rowsDeleted = ps.executeUpdate();
         if (rowsDeleted == 0) {
@@ -64,7 +65,7 @@ public class ServiceFavoris implements IService<Favoris> {
         List<Favoris> temp = new ArrayList<>();
 
         String req = "SELECT * FROM `favoris`";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
 
         ResultSet rs = st.executeQuery(req);
 
@@ -72,10 +73,10 @@ public class ServiceFavoris implements IService<Favoris> {
             Favoris p = new Favoris();
 
             p.setId(rs.getInt(1));
-            p.setRegime_id(rs.getInt(2));
+            //  p.setRegime_id(rs.getInt(2));
             p.setNb_favori(rs.getInt(3));
             p.setNb_total(rs.getInt(4));
-               p.setRegime_name(rs.getString(5));
+            //    p.setRegime_name(rs.getString(5));
 
             temp.add(p);
         }
@@ -91,9 +92,9 @@ public class ServiceFavoris implements IService<Favoris> {
     @Override
     public List<Favoris> selectByIdRegime(int idregime) throws SQLException {
         List<Favoris> temp = new ArrayList<>();
- System.out.print("serviceeeeeeee"+idregime);
+        System.out.print("serviceeeeeeee" + idregime);
         String req = "SELECT * FROM `favoris` WHERE `regime_id` = ?";
-        PreparedStatement ps = cnx.prepareStatement(req);
+        PreparedStatement ps = con.prepareStatement(req);
         ps.setInt(1, idregime);
 
         ResultSet rs = ps.executeQuery();
@@ -103,10 +104,10 @@ public class ServiceFavoris implements IService<Favoris> {
             Favoris p = new Favoris();
 
             p.setId(rs.getInt(1));
-            p.setRegime_id(rs.getInt(2));
+
             p.setNb_favori(rs.getInt(3));
             p.setNb_total(rs.getInt(4));
-   temp.add(p);
+            temp.add(p);
         }
 
         return temp;
@@ -114,17 +115,47 @@ public class ServiceFavoris implements IService<Favoris> {
 
     @Override
     public void insertOne(Favoris t) throws SQLException {
-        String req = "INSERT INTO `favoris`(`regime_id`, `nb_favori`, `nb_total`,`regime_name`) VALUES (?,?,?,?)";
-
-        PreparedStatement ps = cnx.prepareStatement(req);
-        ps.setInt(1, t.getRegime_id());
-        ps.setInt(2, t.getNb_favori());
-        ps.setInt(3, t.getNb_total());
-         ps.setString(4, t.getRegime_name());
+        String req = "INSERT INTO `favoris`(`regime_id`,`id_patient`, `nb_favori`, `nb_total`) VALUES (?,?,?,?)";
+        System.out.println(t.getPatient().getId());
+        PreparedStatement ps = con.prepareStatement(req);
+        ps.setInt(1, t.getRegime_id().getId());
+        ps.setInt(2, t.getPatient().getId());
+        ps.setInt(3, t.getNb_favori());
+        ps.setInt(4, t.getNb_total());
 
         ps.executeUpdate();
 
         System.out.println(" ajouté on favoris !");
+    }
+
+    public List<Favoris> ListFav(int id) throws SQLException {
+        List<Favoris> temp = new ArrayList<>();
+        String req = "SELECT * FROM favoris f JOIN regime r on f.regime_id = r.id where f.id_patient = ?";
+
+        PreparedStatement ps = con.prepareStatement(req);
+        ps.setInt(1, id);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+
+            Favoris p = new Favoris();
+            Regime r = new Regime();
+            r.setId(rs.getInt(1));
+            r.setTitle(rs.getString(2));
+            r.setListe_alement(rs.getString(4));
+            r.setDiscription(rs.getString(3));
+            r.setImage(rs.getString(5));
+            r.setLevel(rs.getString(6));
+            p.setId(rs.getInt(1));
+            p.setRegime_id(r);
+            p.setNb_favori(rs.getInt(3));
+            p.setNb_total(rs.getInt(4));
+            temp.add(p);
+        }
+
+        return temp;
+
     }
 
 }

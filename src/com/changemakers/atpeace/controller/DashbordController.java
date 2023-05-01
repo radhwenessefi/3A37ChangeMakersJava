@@ -52,7 +52,7 @@ public class DashbordController implements Initializable {
     @FXML
     private void goToRegime(MouseEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/changemakers/atpeace/gui/MenuInterface.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/changemakers/atpeace/gui/MenuInterfaceR.fxml"));
         BorderPane content = loader.load();
 
         AnchorPane anchorPane = new AnchorPane(content); // create a new AnchorPane and add the BorderPane to it

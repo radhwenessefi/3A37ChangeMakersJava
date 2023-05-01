@@ -3,26 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/MenuInterfaceController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/services/ServiceRegime.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/entites/Regime.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/BaseFrontController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/gui/SportFrontController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/gui/charts.fxml</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/ChartsController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/RegimeFrontController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/AjouterRegimeController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/AjouterSportController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/entites/Favoris.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/services/ServiceFavoris.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/controleFavoris.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/entites/Rate.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/controlleRate.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/services/ServiceRate.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/DashbordController.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/BaseFront.java</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/gui/sportFront.fxml</file>
-            <file>file:/C:/Users/DELL/Desktop/WorkshopJDBC3A37/WorkshopJDBC3A37/src/com/changemakers/atpeace/controller/GereRegime.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/SignInAdminController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/MainInterface.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/test/Myapplication.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RendezVousInterfaceM.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/service/ServicePatient.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/entities/Patient.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/MedecinDash.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/MenuInterface.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/UpdateInterfaceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/SignInAdmin.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RdvDashController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RendezVousInteraceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/service/MyService.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/PatientDashController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/utils/MyConnection.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/service/ServiceMedecin.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/MedecinDashController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/PatientDash.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/UpdateIntefaceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RendezVousInterace.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/entities/RendezVous.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/service/RdvService.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/entities/User.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RdvDash.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/ProfilInterfaceM.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/SigninInterfaceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/updateInteface.fxml</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/SignupInterfaceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/service/MailSender.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/MenuInterfaceController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/SignupInterfaceMController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/entities/Medecin.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/RendezVousInterfaceMController.java</file>
+            <file>file:/C:/Users/gille/OneDrive/Documents/Projet%20PIDEV/Change_Makers/src/com/changemaker/atpeace/gui/ProfilInterfaceMController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "build/classes/lib"
+    ]
+    ,"java.project.referencedLibraries": [
+        "lib/jpa.jar"
+    ]
+}

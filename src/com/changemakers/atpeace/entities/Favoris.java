@@ -4,7 +4,7 @@
  */
 package com.changemakers.atpeace.entities;
 
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.entities.Patient;
 
 /**

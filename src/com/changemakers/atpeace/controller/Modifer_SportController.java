@@ -4,7 +4,7 @@
  */
 package com.changemakers.atpeace.controller;
 
-import com.changemakers.atpeace.entites.Regime;
+//import com.changemakers.atpeace.entites.Regime;
 import com.changemakers.atpeace.entites.Sport;
 import com.changemakers.atpeace.services.ServiceRegime;
 import com.changemakers.atpeace.services.ServiceSport;

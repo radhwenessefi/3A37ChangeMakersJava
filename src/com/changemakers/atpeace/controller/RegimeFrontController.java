@@ -6,7 +6,7 @@ package com.changemakers.atpeace.controller;
 
 import com.changemakers.atpeace.entities.Favoris;
 import com.changemakers.atpeace.entites.Rate;
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.entities.Patient;
 import com.changemakers.atpeace.entities.Session;
 import com.changemakers.atpeace.services.ServiceFavoris;
@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -131,15 +132,38 @@ Session s = new Session();
 
     @FXML
     private void addFavoris(MouseEvent event) throws SQLException {
-              
-        Favoris rate = new Favoris();
+              ServiceFavoris sr = new ServiceFavoris(); 
+       List <Favoris> rate = sr.ListFav(id);
+       
+       boolean trouve = false;
        
         regime_id=regime.getId();
+        
+        System.out.println("ssss" + regime_id );
+        for(Favoris fav: rate)
+        {
+            System.out.println(fav +"\n");
+            if(fav.getRegime_id().getId() == regime_id)
+            {
+                trouve = true;
+                break;
+                
+            }
+        }
+        if(trouve==true)
+        {
+         Alert alert = new Alert(Alert.AlertType.ERROR, "Le favoris existe déjà.");
+                alert.showAndWait();   
+        }
+        else
+        {
+            
+      
         System.out.print("IIIIIIIIIIIIIID"+regime_id);
                 name_regime=regime.getTitle();
 
-        ServiceFavoris sr = new ServiceFavoris();
-        
+       
+       // List <Favoris>
        List<Favoris> favoris_test=sr.selectByIdRegime(regime_id);
         System.out.print("tesst"+favoris_test);
        
@@ -174,4 +198,5 @@ Session s = new Session();
         }
         
     }
+          }
 }

@@ -6,7 +6,7 @@
 package com.changemakers.atpeace.services;
 
 
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.utils.MyConnexion;
 
 import java.sql.Connection;

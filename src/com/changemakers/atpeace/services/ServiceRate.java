@@ -5,7 +5,7 @@
 package com.changemakers.atpeace.services;
 
 import com.changemakers.atpeace.entites.Rate;
-import com.changemakers.atpeace.entites.Regime;
+//import com.changemakers.atpeace.entites.Regime;
 import com.changemakers.atpeace.utils.MyConnexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

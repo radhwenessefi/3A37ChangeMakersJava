@@ -10,7 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;

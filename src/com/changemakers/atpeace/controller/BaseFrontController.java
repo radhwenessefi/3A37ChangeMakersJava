@@ -4,7 +4,7 @@
  */
 package com.changemakers.atpeace.controller;
 
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.entities.Session;
 import com.changemakers.atpeace.services.SessionService;
 import java.io.IOException;

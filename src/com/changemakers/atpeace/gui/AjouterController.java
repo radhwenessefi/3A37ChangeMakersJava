@@ -5,7 +5,7 @@
 package com.changemakers.atpeace.gui;
 
 import com.changemakers.atpeace.controller.controleRegime;
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.services.ServiceRegime;
 import java.io.File;
 import java.io.FileInputStream;

@@ -4,7 +4,7 @@
  */
 package com.changemakers.atpeace.services;
 
-import com.changemakers.atpeace.entites.Regime;
+import com.changemakers.atpeace.entities.Regime;
 import com.changemakers.atpeace.entities.Favoris;
 import com.changemakers.atpeace.utils.MyConnexion;
 import java.sql.Connection;
@@ -141,16 +141,18 @@ public class ServiceFavoris implements IService<Favoris> {
 
             Favoris p = new Favoris();
             Regime r = new Regime();
-            r.setId(rs.getInt(1));
-            r.setTitle(rs.getString(2));
-            r.setListe_alement(rs.getString(4));
-            r.setDiscription(rs.getString(3));
-            r.setImage(rs.getString(5));
-            r.setLevel(rs.getString(6));
-            p.setId(rs.getInt(1));
-            p.setRegime_id(r);
-            p.setNb_favori(rs.getInt(3));
-            p.setNb_total(rs.getInt(4));
+            r.setId(rs.getInt("r.id"));
+            r.setTitle(rs.getString("r.titre"));
+            r.setListe_alement(rs.getString("r.liste_alement"));
+            r.setDiscription(rs.getString("r.discription"));
+            r.setImage(rs.getString("r.image"));
+            r.setLevel(rs.getString("r.level"));
+            
+            
+            p.setId(rs.getInt("f.id"));
+            p.setNb_favori(rs.getInt("f.nb_favori"));
+            p.setNb_total(rs.getInt("f.nb_total"));
+             p.setRegime_id(r);
             temp.add(p);
         }
 

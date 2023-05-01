@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" minWidth="919.0" prefHeight="778.0" prefWidth="987.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Gui.ListPosteController">
+  <children>
+    <TableView fx:id="posteTable" layoutX="104.0" layoutY="135.0" onMouseClicked="#tableview_clicked" prefHeight="454.0" prefWidth="711.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="150.0" prefWidth="196.0" text="Titre" fx:id="titreColumn" />
+        <TableColumn maxWidth="5000.0" minWidth="149.0" prefWidth="311.0" text="Description" fx:id="descriptionColumn" />
+        <TableColumn minWidth="200.0" prefWidth="200.0" text="Image" fx:id="imageColumn" />
+      </columns>
+    </TableView>
+    <!--     <TextField fx:id="ftr" layoutX="159.0" layoutY="44.0" onKeyReleased="handleSearch" />-->
+    <Button id="refresh_btn" layoutX="697.0" layoutY="637.0" mnemonicParsing="false" onAction="#goToCommant" prefHeight="25.0" prefWidth="118.0" text="READ" />
+    <Button id="backButton" layoutX="756.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="50.0" prefWidth="118.0" text="back">
+      <textFill>
+        <Color blue="0.078" green="0.200" red="0.000" fx:id="x1" />
+      </textFill>
+    </Button>
+    <!--         <Button onAction="#handleChooseImage" text="Choisir une image" />-->
+    <ImageView fx:id="posteImageView" fitHeight="165.87500020010486" fitWidth="294.8888854980469" layoutX="279.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@default-image.jpg" />
+      </image>
+    </ImageView>
+    <Button  layoutX="644.0" layoutY="101.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.00009999999747" text="recherche" textFill="$x1" />
+    <TextField layoutX="104.0" layoutY="102.0" prefWidth="540.0" text="" />
+    <Text layoutX="417.0" layoutY="71.0" scaleX="1.7355823354756663" scaleY="1.355129206997275" strokeType="OUTSIDE" strokeWidth="0.0" text="CHOISIR UN BLOG " />
+  </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="633.0000999999975" prefWidth="973.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Gui.GestionCommentaireController">
+  <children>
+    <Label layoutX="28.0" layoutY="162.0" prefWidth="189.0" text="entrer une mot pour filtrer" />
+    <TextField id="continueCommentaireField" fx:id="continueCommentaireField2" layoutX="239.0" layoutY="162.0" />
+    <TableView fx:id="commentaireTable" layoutX="7.0" layoutY="297.0" prefHeight="187.0" prefWidth="918.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="263.0" text="Continue Commentaier" fx:id="continueCommentaireColumn" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="338.0" text="ID Poste" fx:id="posteIdColumn" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="393.0" text="USER ID" />
+      </columns>
+    </TableView>
+    <Button layoutX="759.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="40.0" prefWidth="118.0" text="Back" />
+    <Button layoutX="411.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleRefresh" prefWidth="133.0" text="Actualiser" />
+    <Button layoutX="597.0" layoutY="496.0" mnemonicParsing="false" onAction="#deleteCommentaire" prefWidth="133.0" text="Supprimer" />
+    <Text layoutX="378.0" layoutY="62.0" scaleX="1.7355823354756663" scaleY="1.355129206997275" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des commentaires" />
+    <Button layoutX="773.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleBan" prefWidth="133.0" text="ban user " />
+    <Button layoutX="444.0" layoutY="163.0" mnemonicParsing="false" onAction="#handleFilter" prefWidth="133.0" text="filtre" />
+  </children>
+</AnchorPane>

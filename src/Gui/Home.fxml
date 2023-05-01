@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="633.0000999999975" prefWidth="973.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Gui.HomeController">
+  <children>
+    <Button fx:id="addPostesButton" layoutX="411.0" layoutY="303.0" onAction="#BackPosteButtonAction" text="Gestion des Poste" />
+    <Button fx:id="postesListButton" layoutX="416.0" layoutY="189.0" onAction="#FrontBlogButtonAction" text="BLOGS TO READ" />
+    <Button fx:id="commentairesListButton" layoutX="382.0" layoutY="373.0" onAction="#handleCommentairesListButtonAction" text="Gestion des Commentairss" />
+    <!-- -->
+  </children>
+</AnchorPane>

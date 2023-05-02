@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="592.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.reponsesceneController">
+   <children>
+      <AnchorPane prefHeight="63.0" prefWidth="669.0" style="-fx-background-color: white;">
+         <children>
+            <TextField fx:id="search" layoutX="43.0" layoutY="20.0" promptText="search" style="-fx-background-color: lightblue; -fx-background-radius: 50;">
+               <font>
+                  <Font name="Georgia" size="10.0" />
+               </font>
+            </TextField>
+            <Label fx:id="tbusername" layoutX="617.0" layoutY="21.0" prefHeight="18.0" prefWidth="42.0" text="Label">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="586.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/profil-de-lutilisateur.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="187.0" layoutY="19.0" prefHeight="21.0" prefWidth="69.0" text="search" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableviewReponse" layoutX="13.0" layoutY="63.0" onMouseClicked="#Select" prefHeight="288.0" prefWidth="588.0" tableMenuButtonVisible="true">
+         <columns>
+            <TableColumn fx:id="idRecColumn" prefWidth="87.0" text="idReclamation" />
+            <TableColumn fx:id="solutionReponseColumn" prefWidth="234.0" text="Solution" />
+            <TableColumn fx:id="dateReponseColumn" prefWidth="207.0" text="Date" />
+         </columns>
+      </TableView>
+      <TextField fx:id="tftitre" layoutX="303.0" layoutY="376.0" prefHeight="31.0" prefWidth="158.0" promptText="Titre de la reclamation" style="-fx-background-radius: 25;" />
+      <DatePicker fx:id="reponsedatefield" layoutX="303.0" layoutY="470.0" style="-fx-background-radius: 25;" />
+      <Button fx:id="btnajouter" layoutX="207.0" layoutY="460.0" mnemonicParsing="false" onAction="#ajouterReponseScene" style="-fx-background-radius: 25;" text="Ajouter" />
+      <Button fx:id="btmodifier" layoutX="203.0" layoutY="513.0" mnemonicParsing="false" onAction="#UpdateItemsReponse" style="-fx-background-radius: 25;" text="Modifier" />
+      <Button fx:id="btnsupprimer" layoutX="197.0" layoutY="561.0" mnemonicParsing="false" onAction="#dropItemsReponse" style="-fx-background-radius: 25;" text="Supprimer" />
+      <TextArea fx:id="solutionfield" layoutX="303.0" layoutY="513.0" prefHeight="79.0" prefWidth="283.0" promptText="solution" style="-fx-background-radius: 50;" />
+      <Button fx:id="exportButton" layoutX="209.0" layoutY="397.0" mnemonicParsing="false" text="Export" />
+      <Button fx:id="sortButton" layoutX="42.0" layoutY="432.0" mnemonicParsing="false" onAction="#sortReponse" prefHeight="31.0" prefWidth="144.0" text="sort" />
+      <TextField fx:id="idReclamationf" layoutX="307.0" layoutY="423.0" prefHeight="31.0" prefWidth="158.0" promptText="id de la reclamation" />
+      <Button fx:id="retourRec" layoutX="42.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchToReclamation" prefHeight="31.0" prefWidth="144.0" text="Back" />
+   </children>
+</AnchorPane>

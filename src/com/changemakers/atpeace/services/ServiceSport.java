@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class ServiceSport implements IService<Sport>{
     
-    private Connection cnx;
+    private Connection con;
 
     public ServiceSport() {
-        cnx = MyConnexion.getInstance().getCnx();
+        con = MyConnexion.getInstance().getCon();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ServiceSport implements IService<Sport>{
         /*
         String req = "INSERT INTO `regime`(`nom`, `prenom`, `age`) "
                 + "VALUES ('"+t.getTitle()+"','"+t.getDiscription()+"', "+t.getLevel()+")";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
         st.executeUpdate(req);    
         System.out.println("regime ajouté !");
 */
@@ -43,7 +43,7 @@ public class ServiceSport implements IService<Sport>{
     public void insertOne1(Sport t) throws SQLException{
 String req = "INSERT INTO `sport`(`titre`, `discription`, `niveaux`, `image`, `level`) VALUES (?,?,?,?,?)";
         
-PreparedStatement ps = cnx.prepareStatement(req);    
+PreparedStatement ps = con.prepareStatement(req);    
 ps.setString(1, t.getTitre());
 ps.setString(2, t.getDiscription());
 ps.setString(3, t.getNiveaux());
@@ -58,7 +58,7 @@ System.out.println("regime ajouté !");
     @Override
    public void updateOne(Sport t) throws SQLException {
     String req = "UPDATE `sport` SET `titre`=?, `discription`=?, `niveaux`=?, `image`=?, `level`=? WHERE `id`=?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setString(1, t.getTitre());
     ps.setString(2, t.getDiscription());
     ps.setString(3, t.getNiveaux());
@@ -77,7 +77,7 @@ System.out.println("regime ajouté !");
     @Override
    public void deleteOne(int id) throws SQLException {
     String req = "DELETE FROM `sport` WHERE `id`=?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setInt(1, id);
     int rowsDeleted = ps.executeUpdate();
     if (rowsDeleted == 0) {
@@ -93,7 +93,7 @@ System.out.println("regime ajouté !");
         List<Sport> temp = new ArrayList<>();
         
         String req = "SELECT * FROM `sport`";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
         
         ResultSet rs = st.executeQuery(req);
         
@@ -119,7 +119,7 @@ public List<Sport> selectByLevel(String level) throws SQLException {
     List<Sport> temp = new ArrayList<>();
     
     String req = "SELECT * FROM `sport` WHERE `level` = ?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setString(1, level);
     
     ResultSet rs = ps.executeQuery();

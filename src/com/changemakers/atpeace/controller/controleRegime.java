@@ -126,6 +126,11 @@ public class controleRegime {
        List<Regime>regimes = sp.selectByLevel(level);
         return regimes;
 	}
+          public List Affichebyidregime(int id) throws SQLException {
+             ServiceRegime sp = new ServiceRegime();
+       List<Regime>regimes = sp.selectByIdRegime(id);
+        return regimes;
+	}
     public void SupprimerRegime(Regime r) throws SQLException {
           ServiceRegime sp = new ServiceRegime();
 		if (r.getId() != 0)

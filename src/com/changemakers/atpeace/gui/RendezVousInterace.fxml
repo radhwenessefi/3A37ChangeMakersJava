@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.RendezVousInteraceController">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="105.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="65.0" fitWidth="125.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="43.0" layoutY="89.0" prefHeight="18.0" prefWidth="78.0" text="   Musique" textAlignment="CENTER">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="124.0" prefHeight="18.0" prefWidth="81.0" text="    Boutique">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="159.0" prefHeight="18.0" prefWidth="83.0" text="     Sport">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="192.0" prefHeight="15.0" prefWidth="82.0" text="     Regime">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="226.0" prefHeight="18.0" prefWidth="85.0" text="      Video">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="260.0" prefHeight="18.0" prefWidth="102.0" text="           Réclamation">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="293.0" prefHeight="18.0" prefWidth="98.0" text="         Rendez-vous">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="14.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/tv-music.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="15.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/cart-shopping-fast%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="15.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/gym.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="29.0" layoutX="16.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/regime.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="13.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/imgvideo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="15.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/id-badge.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="12.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/calendrier.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="46.0" layoutY="323.0" prefHeight="18.0" prefWidth="75.0" text="Blog">
+               <font>
+                  <Font name="Georgia" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="12.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/blog.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="63.0" prefWidth="475.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField layoutX="43.0" layoutY="20.0" promptText="search" style="-fx-background-color: black; -fx-background-radius: 50;">
+                     <font>
+                        <Font name="Georgia" size="10.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="tbusername" layoutX="396.0" layoutY="23.0" prefHeight="18.0" prefWidth="42.0" text="Label">
+                     <font>
+                        <Font name="Copperplate Gothic Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="pfil" fitHeight="30.0" fitWidth="31.0" layoutX="365.0" layoutY="17.0" onMouseClicked="#profil" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/profil-de-lutilisateur.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="lbEt" layoutX="190.0" layoutY="324.0" text="Etat:" visible="false">
+               <font>
+                  <Font name="Georgia Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbetat" layoutX="231.0" layoutY="324.0" prefHeight="14.0" prefWidth="30.0" text="Label" visible="false">
+               <font>
+                  <Font name="Georgia Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDi" layoutX="91.0" layoutY="276.0" text="Diplome:" visible="false">
+               <font>
+                  <Font name="Georgia Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbdiplome" layoutX="156.0" layoutY="275.0" text="Label" visible="false">
+               <font>
+                  <Font name="Georgia Italic" size="12.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabmedecin" layoutY="63.0" onMouseClicked="#selectItems" prefHeight="235.0" prefWidth="473.0">
+              <columns>
+                <TableColumn fx:id="colid" prefWidth="27.19995802640915" text="Id" />
+                <TableColumn fx:id="colnom" prefWidth="104.00000381469727" text="Nom" />
+                  <TableColumn fx:id="colprenom" prefWidth="92.79998779296875" text="Prenom" />
+                  <TableColumn fx:id="coletat" prefWidth="67.99998474121094" text="Etat" />
+                  <TableColumn fx:id="coldiplome" prefWidth="105.59994506835938" text="Diplome" />
+                  <TableColumn fx:id="coltel" prefWidth="76.0" text="Telephone" />
+              </columns>
+            </TableView>
+            <Button layoutX="204.0" layoutY="360.0" mnemonicParsing="false" onAction="#validerRdv" text="Valider" />
+            <Button layoutX="29.0" layoutY="327.0" mnemonicParsing="false" onAction="#updateRdv" text="Modifier" />
+            <DatePicker fx:id="datepk" layoutX="161.0" layoutY="325.0" prefHeight="28.0" prefWidth="139.0" />
+            <Button layoutX="378.0" layoutY="326.0" mnemonicParsing="false" onAction="#annulerRdv" text="Annuler" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

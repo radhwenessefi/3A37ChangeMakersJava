@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="451.0" prefWidth="680.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.controller.MenuIntefaceFrontController">
+   <children>
+      <Label fx:id="lbt" layoutX="43.0" layoutY="191.0" text="Titre">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="146.0" prefHeight="17.0" prefWidth="169.0" text="Type">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="98.0" text="Date">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="231.0" text="Description">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <TextField fx:id="tftitre" layoutX="180.0" layoutY="190.0" prefHeight="25.0" prefWidth="230.0" />
+      <ComboBox fx:id="cbtype" layoutX="180.0" layoutY="145.0" prefHeight="31.0" prefWidth="230.0" />
+      <TextArea fx:id="tadescription" layoutX="180.0" layoutY="231.0" prefHeight="73.0" prefWidth="230.0" />
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="79.0" prefWidth="678.0">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="200.0" onMouseClicked="#retourMenu" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="167.0" layoutY="5.0" prefHeight="73.0" prefWidth="511.0" text="Ajouter Reclamation" textFill="#4d8abc">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      
+      <Button fx:id="voirReclamations" layoutX="376.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchToListReclamations" prefHeight="43.0" prefWidth="185.0" style="-fx-background-color: #4d8abc; -fx-background-radius: 50;" text="Mes Reclamations" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnajouter" layoutX="179.0" layoutY="333.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="43.0" prefWidth="185.0" style="-fx-background-color: #4d8abc; -fx-background-radius: 50;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Pane layoutY="77.0" prefHeight="5.0" prefWidth="678.0" style="-fx-background-color: black;" />
+      <DatePicker fx:id="cdate" layoutX="179.0" layoutY="97.0" prefHeight="31.0" prefWidth="230.0" />
+      <ImageView fitHeight="146.0" fitWidth="120.0" layoutX="495.0" layoutY="124.0">
+         <image>
+            <Image url="@../image/logoReclam.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="272.0" layoutY="393.0" mnemonicParsing="false" onAction="#switchToListReponse" prefHeight="43.0" prefWidth="185.0" style="-fx-background-color: #4d8abc; -fx-background-radius: 50;" text="Mes Reponses" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+
+   </children>
+</AnchorPane>

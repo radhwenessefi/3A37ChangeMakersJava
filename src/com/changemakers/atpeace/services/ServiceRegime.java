@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class ServiceRegime implements IService<Regime>{
     
-    private Connection cnx;
+    private Connection con;
 
     public ServiceRegime() {
-        cnx = MyConnexion.getInstance().getCnx();
+        con = MyConnexion.getInstance().getCon();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ServiceRegime implements IService<Regime>{
         /*
         String req = "INSERT INTO `regime`(`nom`, `prenom`, `age`) "
                 + "VALUES ('"+t.getTitle()+"','"+t.getDiscription()+"', "+t.getLevel()+")";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
         st.executeUpdate(req);    
         System.out.println("regime ajouté !");
 */
@@ -43,7 +43,7 @@ public class ServiceRegime implements IService<Regime>{
     public void insertOne1(Regime t) throws SQLException{
 String req = "INSERT INTO `regime`(`titre`, `discription`, `liste_alement`, `image`, `level`) VALUES (?,?,?,?,?)";
         
-PreparedStatement ps = cnx.prepareStatement(req);    
+PreparedStatement ps = con.prepareStatement(req);    
 ps.setString(1, t.getTitle());
 ps.setString(2, t.getDiscription());
 ps.setString(3, t.getListe_alement());
@@ -58,7 +58,7 @@ System.out.println("regime ajouté !");
     @Override
    public void updateOne(Regime t) throws SQLException {
     String req = "UPDATE `regime` SET `titre`=?, `discription`=?, `liste_alement`=?, `image`=?, `level`=? WHERE `id`=?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setString(1, t.getTitle());
     ps.setString(2, t.getDiscription());
     ps.setString(3, t.getListe_alement());
@@ -77,7 +77,7 @@ System.out.println("regime ajouté !");
     @Override
    public void deleteOne(int id) throws SQLException {
     String req = "DELETE FROM `regime` WHERE `id`=?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setInt(1, id);
     int rowsDeleted = ps.executeUpdate();
     if (rowsDeleted == 0) {
@@ -93,7 +93,7 @@ System.out.println("regime ajouté !");
         List<Regime> temp = new ArrayList<>();
         
         String req = "SELECT * FROM `regime`";
-        Statement st = cnx.createStatement();
+        Statement st = con.createStatement();
         
         ResultSet rs = st.executeQuery(req);
         
@@ -119,7 +119,7 @@ public List<Regime> selectByLevel(String level) throws SQLException {
     List<Regime> temp = new ArrayList<>();
     
     String req = "SELECT * FROM `regime` WHERE `level` = ?";
-    PreparedStatement ps = cnx.prepareStatement(req);
+    PreparedStatement ps = con.prepareStatement(req);
     ps.setString(1, level);
     
     ResultSet rs = ps.executeQuery();
@@ -141,8 +141,29 @@ public List<Regime> selectByLevel(String level) throws SQLException {
 }
 
     @Override
-    public List<Regime> selectByIdRegime(int idregime) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Regime> selectByIdRegime(int id) throws SQLException {
+            List<Regime> temp = new ArrayList<>();
+    
+    String req = "SELECT * FROM `regime` WHERE `id` = ?";
+    PreparedStatement ps = con.prepareStatement(req);
+    ps.setInt(1, id);
+    
+    ResultSet rs = ps.executeQuery();
+    
+    while (rs.next()) {
+        
+        Regime p = new Regime();
+        p.setId(rs.getInt(1));
+        p.setTitle(rs.getString(2));
+        p.setListe_alement(rs.getString(4));
+        p.setDiscription(rs.getString(3));
+        p.setImage(rs.getString(5));
+        p.setLevel(rs.getString(6));        
+        temp.add(p);
+        
+    }
+    
+    return temp;
     }
 
     

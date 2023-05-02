@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="525.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.changemakers.atpeace.gui.SportFrontController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-13.0" prefHeight="169.0" prefWidth="761.0">
+         <children>
+            <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="-37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/bb.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="172.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/bb.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="169.0" fitWidth="262.0" layoutX="380.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/bb.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="169.0" fitWidth="238.0" layoutX="540.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/bb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <VBox layoutX="-6.0" layoutY="157.0" prefHeight="369.0" prefWidth="769.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="770.0" style="-fx-background-color: white;" text="Liste Medecin " textFill="#d1567d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="scrollPane1" prefHeight="420.0" prefWidth="769.0">
+               <content>
+                  <GridPane fx:id="productGrid" prefHeight="26.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints maxHeight="461.599951171875" minHeight="10.0" prefHeight="184.00000915527343" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <Pagination prefHeight="200.0" prefWidth="769.0" />
+         </children>
+      </VBox>
+   </children>
+</Pane>

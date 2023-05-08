@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Entities.Commentaire;
+import Entities.Commentaires;
 import Entities.Poste;
 import Utils.DbConnection;
 
@@ -28,8 +28,8 @@ public class CommentaireService {
     
     
     
-public List<Commentaire> getAllCommentaires() {
-    List<Commentaire> commentaires = new ArrayList<>();
+public List<Commentaires> getAllCommentaires() {
+    List<Commentaires> commentaires = new ArrayList<>();
 
 
     try {
@@ -38,7 +38,7 @@ public List<Commentaire> getAllCommentaires() {
         rs = ps.executeQuery();
 
         while (rs.next()) {
-            Commentaire commentaire = new Commentaire();
+            Commentaires commentaire = new Commentaires();
             commentaire.setId(rs.getInt("id"));
             //commentaire.setContinueCommentaire(rs.getString("continue_commentaire").replaceAll("\\" + continueCommentaireField2.getText(), "****"));
             commentaire.setContinueCommentaire(rs.getString("continue_commentaire").replaceAll("\\" + continueCommentaireField2, "****"));
@@ -52,7 +52,7 @@ public List<Commentaire> getAllCommentaires() {
 }
 
 
-    public void updateCommentaire(Commentaire commentaire) {
+    public void updateCommentaire(Commentaires commentaire) {
         try {
             String requete = "UPDATE commentaire SET continue_commentaire = ? WHERE id = ?";
             ps = con.prepareStatement(requete);
@@ -76,7 +76,7 @@ public List<Commentaire> getAllCommentaires() {
     }
 
 
-    public void insertOne1(Commentaire t) throws SQLException{
+    public void insertOne1(Commentaires t) throws SQLException{
 String req = "INSERT INTO commentaire ( `id_post`,`continueCommentaire`) VALUES (?,?)";
         
 PreparedStatement ps = con.prepareStatement(req); 
@@ -89,8 +89,8 @@ System.out.println("Commentaire ajouté !");
 
     }
 
-    public Commentaire getCommentaireById(int id) {
-        Commentaire commentaire = null;
+    public Commentaires getCommentaireById(int id) {
+        Commentaires commentaire = null;
 
         try {
             String requete = "SELECT * FROM commentaire WHERE id = ?";
@@ -99,7 +99,7 @@ System.out.println("Commentaire ajouté !");
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                commentaire = new Commentaire();
+                commentaire = new Commentaires();
                 commentaire.setId(rs.getInt("id"));
                 commentaire.setContinueCommentaire(rs.getString("continue_commentaire"));
             }
@@ -109,8 +109,8 @@ System.out.println("Commentaire ajouté !");
 
         return commentaire;
     }
-public List<Commentaire> getByPoste(int postId) {
-    List<Commentaire> commentaires = new ArrayList<>();
+public List<Commentaires> getByPoste(int postId) {
+    List<Commentaires> commentaires = new ArrayList<>();
 
     try {
         PreparedStatement ps = con.prepareStatement("SELECT * FROM Poste WHERE poste_id = ?");
@@ -118,7 +118,7 @@ public List<Commentaire> getByPoste(int postId) {
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
-            Commentaire commentaire = new Commentaire();
+            Commentaires commentaire = new Commentaires();
             commentaire.setId(rs.getInt("id"));
             commentaire.setContinueCommentaire(rs.getString("continue_commentaire"));
             commentaire.setPoste_id(rs.getInt("poste_id"));
@@ -135,7 +135,7 @@ public List<Commentaire> getByPoste(int postId) {
 
 
 
-    public Commentaire[] getCommentairesByPoste(int id) {
+    public Commentaires[] getCommentairesByPoste(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
            

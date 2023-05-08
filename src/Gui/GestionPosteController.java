@@ -36,11 +36,11 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-import java.io.FileOutputStream;
+//import com.itextpdf.text.Document;
+//import com.itextpdf.text.DocumentException;
+//import com.itextpdf.text.Paragraph;
+//import com.itextpdf.text.pdf.PdfWriter;
+//import java.io.FileOutputStream;
 
 public class GestionPosteController implements Initializable {
 
@@ -94,14 +94,14 @@ public class GestionPosteController implements Initializable {
                 Poste poste = new Poste(
                     rs.getInt("id"),
                     rs.getString("titre"),
-                    rs.getString("description"),
+                    rs.getString("dicription"),
                     rs.getString("image")
                 );
                 posteList.add(poste);
             }
             posteTable.setItems(posteList);
             titreColumn.setCellValueFactory(new PropertyValueFactory<>("titre"));
-            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("deicription"));
             imageColumn.setCellValueFactory(new PropertyValueFactory<>("image"));
          
         } catch (SQLException ex) {
@@ -125,11 +125,11 @@ private void handleSearch(ActionEvent event) {
 private void handleAdd(ActionEvent event) {
     PosteService ps = new PosteService();
     String titre = titreField.getText();
-    String description = descriptionArea.getText();
+    String deicription = descriptionArea.getText();
     String image = imageField.getText();
-    if(!titre.isEmpty() && !description.isEmpty() && !image.isEmpty()){
+    if(!titre.isEmpty() && !deicription.isEmpty() && !image.isEmpty()){
         try {
-            Poste poste = new Poste(titre, description, image);
+            Poste poste = new Poste(titre, deicription, image);
             ps.addPoste(poste);
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Success");
@@ -236,14 +236,14 @@ private void refresh_pressed()
                 Poste poste = new Poste(
                     rs.getInt("id"),
                     rs.getString("titre"),
-                    rs.getString("description"),
+                    rs.getString("deicription"),
                     rs.getString("image")
                 );
                 posteList.add(poste);
             }
             posteTable.setItems(posteList);
             titreColumn.setCellValueFactory(new PropertyValueFactory<>("titre"));
-            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+            descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("deicription"));
             imageColumn.setCellValueFactory(new PropertyValueFactory<>("image"));
         }
         catch (SQLException ex) {
@@ -254,8 +254,8 @@ private void refresh_pressed()
     imageField.setText("");
     posteTable.setItems(posteList);
 }
-
-
+}
+/*
 @FXML
 private void handleBackButtonAction(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
@@ -277,9 +277,9 @@ public void generatePDF(Poste poste) {
     } catch (DocumentException | IOException e) {
         e.printStackTrace();
     }
+/*
 
-
-
+}
 }
 
 public void handlepdf(ActionEvent event) {

@@ -1,6 +1,6 @@
     package Services;
 
-import Entities.Commentaire;
+import Entities.Commentaires;
 import Entities.Poste;
 import java.sql.SQLException;
 import java.util.List;
@@ -42,7 +42,7 @@ public class PosteService {
         
 
         public void addPoste(Poste p) throws SQLException {
-        String requete = "INSERT INTO `Poste` (`titre`, `description`,`image`)VALUES ( '"
+        String requete = "INSERT INTO `Poste` (`titre`, `dicription`,`image`)VALUES ( '"
          + p.getDescription()+ "', '" + p.getTitre()+ "', '" + p.getImage()+ "') ";
         stm = con.createStatement();
         stm.executeUpdate(requete);
@@ -69,7 +69,7 @@ public class PosteService {
 
            
              public void updatePoste(Poste p, int id) throws SQLException {
-        String req = "UPDATE Games SET  titre = ?, description = ?, imgage = ? where id= " + id;
+        String req = "UPDATE Games SET  titre = ?, dicription = ?, imgage = ? where id= " + id;
         PreparedStatement pre;
 
             pre = con.prepareStatement(req);
@@ -101,7 +101,7 @@ public List<Poste> getByTitre(String titre) {
             Poste poste = new Poste(
                 rs.getInt("id"),
                 rs.getString("titre"),
-                rs.getString("description"),
+                rs.getString("dicription"),
                 rs.getString("image")
             );
             postes.add(poste);
@@ -114,6 +114,7 @@ public List<Poste> getByTitre(String titre) {
     return postes;
 }
 }
+
 
 
 /*

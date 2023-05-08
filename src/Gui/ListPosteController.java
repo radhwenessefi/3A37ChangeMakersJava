@@ -77,7 +77,7 @@ public class ListPosteController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {    
         posteList = FXCollections.observableArrayList();
         Connection con = DbConnection.getInstance().getConnection();
-        try {
+           try {
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `Poste`");
             while (rs.next()) {
                 Poste poste = new Poste(
@@ -104,13 +104,13 @@ public class ListPosteController implements Initializable {
             } else {
                 System.err.println("Failed to load default image: " + defaultImagePath);
             }
-*/            
+           }*/         
         } catch (SQLException ex) {
             Logger.getLogger(GestionPosteController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         posteService = new PosteService();
     }
-    
+    }    
     @FXML
 private void tableview_clicked(MouseEvent event) {
     selectedPoste = posteTable.getSelectionModel().getSelectedItem();
@@ -136,8 +136,8 @@ private void handleShow(ActionEvent event) throws IOException {
         alert.showAndWait();
     }
 }
-
 */
+
 
 
     @FXML

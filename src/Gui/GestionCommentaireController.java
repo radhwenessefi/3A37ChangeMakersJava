@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Entities.Commentaire;
+import Entities.Commentaires;
 import Entities.Poste;
 import Services.CommentaireService;
 import Utils.DbConnection;
@@ -42,17 +42,17 @@ public class GestionCommentaireController implements Initializable {
     @FXML
     private TextField posteIdField;
     @FXML
-    private TableView<Commentaire> commentaireTable;
+    private TableView<Commentaires> commentaireTable;
     @FXML
-    private TableColumn<Commentaire, String> continueCommentaireColumn;
+    private TableColumn<Commentaires, String> continueCommentaireColumn;
     @FXML
-    private TableColumn<Commentaire, Integer> posteIdColumn;
+    private TableColumn<Commentaires, Integer> posteIdColumn;
 
     private CommentaireService commentaireService;
     
-    ObservableList <Commentaire> commetaireList = FXCollections.observableArrayList(); 
+    ObservableList <Commentaires> commetaireList = FXCollections.observableArrayList(); 
 
-    private static Commentaire selectedCommentaire;
+    private static Commentaires selectedCommentaire;
     private int id_selected;
     
     @Override
@@ -64,13 +64,13 @@ public class GestionCommentaireController implements Initializable {
 
     }
 
-    private void showCommentaireTable(List<Commentaire> commentaires) {
-    ObservableList<Commentaire> observableList = FXCollections.observableArrayList(commentaires);
+    private void showCommentaireTable(List<Commentaires> commentaires) {
+    ObservableList<Commentaires> observableList = FXCollections.observableArrayList(commentaires);
     commentaireTable.setItems(observableList);
 }
     @FXML
 private void deleteCommentaire(ActionEvent event) {
-    Commentaire selectedCommentaire = commentaireTable.getSelectionModel().getSelectedItem();
+    Commentaires selectedCommentaire = commentaireTable.getSelectionModel().getSelectedItem();
     if (selectedCommentaire != null) {
         commentaireService.deleteCommentaire(selectedCommentaire.getId());
         showCommentaireTable(commentaireService.getAllCommentaires());
@@ -113,7 +113,7 @@ private void tableview_clicked(MouseEvent event) {
 private void handleFilter(ActionEvent event) {
     String filterText = continueCommentaireField2.getText();
     if (!filterText.isEmpty()) {
-        List<Commentaire> filteredCommentaires = commentaireService.getAllCommentaires().stream()
+        List<Commentaires> filteredCommentaires = commentaireService.getAllCommentaires().stream()
                 .peek(commentaire -> {
                     if (commentaire.getContinueCommentaire().contains(filterText)) {
                         commentaire.setContinueCommentaire("****");
@@ -142,14 +142,14 @@ private void handleFilter(ActionEvent event) {
 private void handleUpdate(ActionEvent event) {
 int index = id_selected;
 CommentaireService service = new CommentaireService();
-Commentaire commentaire = new Commentaire(continueCommentaireField.getText(), poste_idField.getText());
+Commentaires commentaire = new Commentaires(continueCommentaireField.getText(), poste_idField.getText());
 if (!commentaire.getContinueCommentaire().isEmpty()) {
     try {
         service.updateCommentaire(commentaire, index);
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Success");
-        alert.setContentText("Commentaire updated");
+        alert.setContentText("Commentaires updated");
         alert.show();
 
         // Refresh the table view with updated data
@@ -180,9 +180,9 @@ private void refresh_pressed()
     commetaireList = FXCollections.observableArrayList();
     Connection con = DbConnection.getInstance().getConnection();
     try {
-        ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `Commentaire`");
+        ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `Commentaires`");
         while (rs.next()) {
-            Commentaire commentaire = new Commentaire(
+            Commentaires commentaire = new Commentaires(
                 rs.getPosteId("poste_id"),
                 rs.getString("continueCommentaire")
 

@@ -12,7 +12,7 @@ public class Poste {
 
         private int id;
     private String titre;
-    private String description;
+    private String dicription;
     private String image;
    // private String continueCommentaireField2;
 
@@ -22,14 +22,14 @@ public class Poste {
     public Poste(int id, String titre, String description, String image) {
         this.id = id;
         this.titre = titre;
-        this.description = description;
+        this.dicription = description;
         this.image = image;
     }
 
     public Poste(String titre, String description, String image) {
          
         this.titre = titre;
-        this.description = description;
+        this.dicription = description;
         this.image = image;
     }
 
@@ -47,11 +47,11 @@ public class Poste {
     }
 
     public String getDescription() {
-        return description;
+        return dicription;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.dicription = description;
     }
     
     public void setImage(String image) {
@@ -59,7 +59,7 @@ public class Poste {
     }
 
         public String getImage() {
-        return description;
+        return dicription;
     }
         
  

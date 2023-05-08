@@ -1,6 +1,6 @@
 package Gui;
 
-import Entities.Commentaire;
+import Entities.Commentaires;
 import Entities.Poste;
 import Services.CommentaireService;
 import Services.PosteService;
@@ -36,7 +36,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PosteFrontController implements Initializable {
 
-    private ObservableList<Commentaire> commentaireList = FXCollections.observableArrayList();
+    private ObservableList<Commentaires> commentaireList = FXCollections.observableArrayList();
 
     @FXML
     private TextField titreField;
@@ -51,10 +51,10 @@ public class PosteFrontController implements Initializable {
     private TextField continueCommentaireField;
 
     @FXML
-    private TableView<Commentaire> commentaireTable;
+    private TableView<Commentaires> commentaireTable;
 
     @FXML
-    private TableColumn<Commentaire, String> continueCommentaireColumn;
+    private TableColumn<Commentaires, String> continueCommentaireColumn;
 
     
     
@@ -89,7 +89,7 @@ public class PosteFrontController implements Initializable {
 private void addCommentaire(ActionEvent event) throws SQLException {
    
     String commentaire = continueCommentaireField.getText();
-    Commentaire c = new Commentaire(id_c, commentaire);
+    Commentaires c = new Commentaires(id_c, commentaire);
     CommentaireService sc = new CommentaireService();
     sc.insertOne1(c);
 }
